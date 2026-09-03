@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <title>arXiv Query Results</title>
+  <entry>
+    <id>https://arxiv.org/abs/2609.00001v1</id>
+    <updated>2026-09-03T00:30:00Z</updated><published>2026-09-03T00:30:00Z</published>
+    <title>RouteCraft: Stable Expert Routing for Large Mixture-of-Experts Models</title>
+    <summary>We propose a new architecture for mixture of experts language models with stable expert routing. Extensive experiments on billion parameter models include strong baselines and ablation studies. We release our code.</summary>
+    <author><name>Ada Example</name></author><author><name>Lin Researcher</name></author>
+    <category term="cs.LG"/><category term="cs.CL"/><arxiv:primary_category term="cs.LG"/>
+    <link href="https://arxiv.org/abs/2609.00001v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00001v1" rel="related" type="application/pdf"/>
+  </entry>
+  <entry>
+    <id>https://arxiv.org/abs/2609.00002v1</id>
+    <updated>2026-09-02T23:20:00Z</updated><published>2026-09-02T23:20:00Z</published>
+    <title>Seeing Longer: A Long-Context Vision-Language Model Architecture</title>
+    <summary>We propose a novel method for a multimodal large language model with a new architecture and long context. Large-scale evaluation reports state-of-the-art results and detailed ablation experiments.</summary>
+    <author><name>Mira Chen</name></author><author><name>Sam Lee</name></author>
+    <category term="cs.CV"/><category term="cs.CL"/><arxiv:primary_category term="cs.CV"/>
+    <link href="https://arxiv.org/abs/2609.00002v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00002v1" rel="related" type="application/pdf"/>
+  </entry>
+  <entry>
+    <id>https://arxiv.org/abs/2609.00003v2</id>
+    <updated>2026-09-02T19:15:00Z</updated><published>2026-09-01T19:15:00Z</published>
+    <title>ToolWeaver: Efficient Test-Time Planning for Language Agents</title>
+    <summary>We propose a new framework for an LLM agent that improves tool use and reasoning with test-time compute. Extensive experiments compare against strong baselines, and code is available.</summary>
+    <author><name>Noah Wang</name></author>
+    <category term="cs.AI"/><category term="cs.CL"/><arxiv:primary_category term="cs.AI"/>
+    <link href="https://arxiv.org/abs/2609.00003v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00003v2" rel="related" type="application/pdf"/>
+  </entry>
+  <entry>
+    <id>https://arxiv.org/abs/2609.00004v1</id>
+    <updated>2026-09-02T16:10:00Z</updated><published>2026-09-02T16:10:00Z</published>
+    <title>Preference Optimization Without a Reference Model</title>
+    <summary>We propose an algorithm for post-training large language models using preference optimization. A theoretical analysis and extensive experiments study the objective at scale.</summary>
+    <author><name>Priya Kumar</name></author><author><name>Alex Smith</name></author>
+    <category term="cs.CL"/><category term="cs.LG"/><arxiv:primary_category term="cs.CL"/>
+    <link href="https://arxiv.org/abs/2609.00004v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00004v1" rel="related" type="application/pdf"/>
+  </entry>
+  <entry>
+    <id>https://arxiv.org/abs/2609.00005v1</id>
+    <updated>2026-09-02T12:05:00Z</updated><published>2026-09-02T12:05:00Z</published>
+    <title>FastKV: Memory-Efficient Inference for Transformer Language Models</title>
+    <summary>We propose a memory efficient KV cache algorithm for large language model inference. Experiments include an ablation and comparisons with strong baselines.</summary>
+    <author><name>Eva Stone</name></author>
+    <category term="cs.CL"/><arxiv:primary_category term="cs.CL"/>
+    <link href="https://arxiv.org/abs/2609.00005v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00005v1" rel="related" type="application/pdf"/>
+  </entry>
+  <entry>
+    <id>https://arxiv.org/abs/2609.00006v1</id>
+    <updated>2026-09-02T10:00:00Z</updated><published>2026-09-02T10:00:00Z</published>
+    <title>A Benchmark for Multi-Agent Coordination</title>
+    <summary>We introduce a benchmark and evaluation protocol for multi-agent systems powered by language models. The dataset and leaderboard will be open source.</summary>
+    <author><name>Rui Zhao</name></author>
+    <category term="cs.AI"/><arxiv:primary_category term="cs.AI"/>
+    <link href="https://arxiv.org/abs/2609.00006v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00006v1" rel="related" type="application/pdf"/>
+  </entry>
+  <entry>
+    <id>https://arxiv.org/abs/2609.00007v1</id>
+    <updated>2026-09-02T09:00:00Z</updated><published>2026-09-02T09:00:00Z</published>
+    <title>Safer Language Models Through Adaptive Alignment</title>
+    <summary>We study language model safety and jailbreak robustness. We propose a method and evaluate it on a public benchmark.</summary>
+    <author><name>Taylor Green</name></author>
+    <category term="cs.CL"/><arxiv:primary_category term="cs.CL"/>
+    <link href="https://arxiv.org/abs/2609.00007v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00007v1" rel="related" type="application/pdf"/>
+  </entry>
+  <entry>
+    <id>https://arxiv.org/abs/2609.00008v1</id>
+    <updated>2026-09-02T08:00:00Z</updated><published>2026-09-02T08:00:00Z</published>
+    <title>Clinical Language Models for Hospital Discharge Notes</title>
+    <summary>We evaluate a language model for medical patient records and clinical discharge summaries in healthcare.</summary>
+    <author><name>Jamie Clinic</name></author>
+    <category term="cs.CL"/><arxiv:primary_category term="cs.CL"/>
+    <link href="https://arxiv.org/abs/2609.00008v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00008v1" rel="related" type="application/pdf"/>
+  </entry>
+  <entry>
+    <id>https://arxiv.org/abs/2609.00009v1</id>
+    <updated>2026-08-20T08:00:00Z</updated><published>2026-08-20T08:00:00Z</published>
+    <title>An Old Language Model Paper Outside the Lookback Window</title>
+    <summary>We propose a large language model architecture.</summary>
+    <author><name>Old Author</name></author>
+    <category term="cs.CL"/><arxiv:primary_category term="cs.CL"/>
+    <link href="https://arxiv.org/abs/2609.00009v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00009v1" rel="related" type="application/pdf"/>
+  </entry>
+</feed>

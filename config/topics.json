@@ -1,0 +1,123 @@
+{
+  "categories": ["cs.CL", "cs.AI", "cs.LG", "cs.CV", "stat.ML"],
+  "must_read_count": 5,
+  "browse_count": 10,
+  "lookback_hours": 72,
+  "topics": [
+    {
+      "id": "llm",
+      "label": "LLM",
+      "priority": "core",
+      "weight": 14,
+      "phrases": ["large language model", "language model", "foundation model", "transformer"]
+    },
+    {
+      "id": "multimodal",
+      "label": "MLLM / VLM",
+      "priority": "core",
+      "weight": 15,
+      "phrases": ["multimodal language model", "multimodal large language model", "vision-language model", "vision language model", "vlm"]
+    },
+    {
+      "id": "moe",
+      "label": "MoE",
+      "priority": "core",
+      "weight": 21,
+      "phrases": ["mixture of experts", "mixture-of-experts", "expert routing", "sparse expert"]
+    },
+    {
+      "id": "agent",
+      "label": "Agent",
+      "priority": "core",
+      "weight": 14,
+      "phrases": ["language agent", "llm agent", "agentic", "multi-agent", "tool use", "tool-use"]
+    },
+    {
+      "id": "training",
+      "label": "预训练 / 后训练",
+      "priority": "core",
+      "weight": 16,
+      "phrases": ["pretraining", "pre-training", "post-training", "post training", "instruction tuning", "preference optimization", "reinforcement learning from human feedback", "rlhf"]
+    },
+    {
+      "id": "architecture",
+      "label": "模型架构",
+      "priority": "core",
+      "weight": 16,
+      "phrases": ["model architecture", "transformer architecture", "attention mechanism", "state space model", "long context", "architecture design"]
+    },
+    {
+      "id": "reasoning",
+      "label": "推理",
+      "priority": "secondary",
+      "weight": 8,
+      "phrases": ["reasoning", "chain-of-thought", "test-time compute", "inference-time scaling"]
+    },
+    {
+      "id": "efficiency",
+      "label": "效率",
+      "priority": "secondary",
+      "weight": 7,
+      "phrases": ["efficient inference", "quantization", "speculative decoding", "kv cache", "memory efficient", "training efficiency"]
+    },
+    {
+      "id": "evaluation",
+      "label": "评测",
+      "priority": "secondary",
+      "weight": 1,
+      "phrases": ["benchmark", "evaluation", "evaluating", "leaderboard"]
+    },
+    {
+      "id": "safety",
+      "label": "安全",
+      "priority": "low",
+      "weight": 3,
+      "phrases": ["ai safety", "language model safety", "jailbreak", "alignment safety"]
+    }
+  ],
+  "quality_signals": {
+    "method": ["we propose", "novel method", "new architecture", "new framework", "algorithm"],
+    "scale": ["billion parameter", "large-scale", "large scale", "trillion token", "scaling law"],
+    "evidence": ["ablation", "strong baseline", "state-of-the-art", "extensive experiment", "theoretical analysis", "proof"],
+    "openness": ["open source", "open-source", "code is available", "release our code", "release the model", "release the dataset"]
+  },
+  "preference_signals": {
+    "boost": {
+      "scaling-and-compute": {
+        "phrases": ["scaling law", "scaling laws", "compute-matched", "compute matched"],
+        "points": 8
+      },
+      "expert-mechanism": {
+        "phrases": ["expert routing", "routing strategy", "sparse expert", "expert specialization"],
+        "points": 5
+      },
+      "training-mechanism": {
+        "phrases": ["training dynamics", "optimization dynamics", "pretraining dynamics", "post-training dynamics"],
+        "points": 4
+      }
+    },
+    "title_penalty": {
+      "hallucination-or-faithfulness": {
+        "phrases": ["hallucination", "hallucinations", "faithfulness"],
+        "points": 14
+      },
+      "benchmark-primary": {
+        "phrases": ["benchmark", "benchmarking", "evaluating", "evaluation of", "an evaluation"],
+        "points": 12
+      },
+      "safety-primary": {
+        "phrases": ["safety", "harm", "jailbreak", "moderation", "red teaming", "red-teaming", "fooling"],
+        "points": 10
+      }
+    }
+  },
+  "vertical_exclusions": {
+    "medical": ["medical", "clinical", "patient", "radiology", "pathology", "healthcare"],
+    "finance": ["financial market", "stock market", "portfolio", "credit risk", "algorithmic trading"],
+    "remote-sensing": ["remote sensing", "satellite imagery", "hyperspectral", "earth observation"],
+    "recommender-and-ads": ["recommendation system", "recommender system", "advertising recommendation", "click-through rate", "ad targeting"],
+    "narrow-nlp-task": ["named entity recognition", "relation extraction", "sentiment analysis", "aspect-based sentiment", "fake news detection", "spam detection"],
+    "narrow-vision-task": ["face recognition", "facial recognition", "person re-identification", "pedestrian detection", "license plate recognition"]
+  },
+  "foundation_overrides": ["foundation model", "general-purpose", "general purpose", "new architecture", "pretraining", "pre-training"]
+}

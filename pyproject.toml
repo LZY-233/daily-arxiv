@@ -1,0 +1,5 @@
+[project]
+name = "daily-arxiv"
+version = "0.1.0"
+description = "A transparent daily arXiv research radar"
+requires-python = ">=3.11"

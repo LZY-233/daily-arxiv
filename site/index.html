@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Daily arXiv Research Radar — 每日基础模型论文精选" />
+    <title>Daily arXiv · Research Radar</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="masthead shell">
+      <a class="brand" href="#" aria-label="Daily arXiv 首页">
+        <span class="brand-mark">A<span>→</span></span>
+        <span><strong>DAILY ARXIV</strong><small>RESEARCH RADAR</small></span>
+      </a>
+      <div class="edition"><span id="edition-date">LOADING</span><span>BEIJING · 10:07</span></div>
+    </header>
+
+    <main>
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow">基础模型研究情报 / ISSUE <span id="issue-number">—</span></p>
+          <h1>先找到真正<br /><em>值得读</em>的工作。</h1>
+          <p class="dek">从最新 arXiv 中筛选方法创新、工程系统、理论价值与大规模实证。评分透明，结论保留不确定性。</p>
+        </div>
+        <aside class="briefing" aria-label="本期概览">
+          <p class="briefing-label">TODAY'S BRIEFING</p>
+          <div class="briefing-grid">
+            <div><strong id="must-count">0</strong><span>必读</span></div>
+            <div><strong id="browse-count">0</strong><span>浏览</span></div>
+            <div><strong id="source-count">0</strong><span>候选</span></div>
+          </div>
+          <p class="scope"><span></span>当前证据范围：标题与摘要初审</p>
+        </aside>
+      </section>
+
+      <section class="controls-wrap">
+        <div class="controls shell">
+          <div class="tabs" role="tablist" aria-label="论文等级">
+            <button class="tab active" data-tier="featured">今日精选</button>
+            <button class="tab" data-tier="must_read">必读</button>
+            <button class="tab" data-tier="browse">值得浏览</button>
+            <button class="tab" data-tier="watch">观察名单</button>
+            <button class="tab" data-tier="saved">已收藏</button>
+            <button class="tab" data-tier="ignored">已忽略</button>
+          </div>
+          <div class="filter-row">
+            <label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜索标题、作者或摘要…" /></label>
+            <select id="topic-filter" aria-label="按主题筛选"><option value="all">所有主题</option></select>
+            <select id="sort-order" aria-label="排序方式"><option value="score">按综合分数</option><option value="newest">按更新时间</option></select>
+          </div>
+        </div>
+      </section>
+
+      <section class="feed shell">
+        <div class="section-heading"><h2 id="section-title">今日精选</h2><p id="result-count">0 篇论文</p></div>
+        <div id="paper-list" class="paper-list" aria-live="polite"></div>
+        <div id="empty-state" class="empty" hidden><p>没有匹配的论文。</p><button id="reset-filters">清除筛选</button></div>
+      </section>
+    </main>
+
+    <footer class="shell">
+      <p>DAILY ARXIV · 数据来自 arXiv · 不保存论文 PDF</p>
+      <p>个人收藏、已读与忽略状态仅保存在此浏览器。</p>
+    </footer>
+
+    <template id="paper-template">
+      <article class="paper-card">
+        <div class="rank"><span class="rank-number"></span><span class="tier-label"></span></div>
+        <div class="paper-main">
+          <div class="paper-meta"><span class="primary-category"></span><span class="updated-at"></span><span class="review-badge">摘要初审</span></div>
+          <h3><a class="paper-title" target="_blank" rel="noreferrer"></a></h3>
+          <p class="authors"></p>
+          <div class="topics"></div>
+          <p class="abstract"></p>
+          <details>
+            <summary>查看评分依据与局限</summary>
+            <div class="evidence-grid"><div><h4>为什么相关</h4><ul class="why-list"></ul></div><div><h4>证据信号</h4><ul class="evidence-list"></ul></div></div>
+            <p class="limitations"></p>
+          </details>
+          <div class="paper-links"><a class="abs-link" target="_blank" rel="noreferrer">ARXIV ↗</a><a class="pdf-link" target="_blank" rel="noreferrer">PDF ↗</a></div>
+        </div>
+        <aside class="score-panel">
+          <div class="score-ring"><strong class="score"></strong><span>/ 100</span></div>
+          <div class="score-breakdown"><p><span>相关性</span><strong class="relevance"></strong></p><p><span>证据信号</span><strong class="evidence-score"></strong></p><p><span>偏好加分</span><strong class="preference-boost"></strong></p><p><span>偏好降权</span><strong class="preference-penalty"></strong></p></div>
+          <div class="actions"><button class="save-button" title="收藏">☆</button><button class="read-button" title="标记已读">✓</button><button class="ignore-button" title="忽略">×</button></div>
+        </aside>
+      </article>
+    </template>
+    <script src="assets/app.js" defer></script>
+  </body>
+</html>
