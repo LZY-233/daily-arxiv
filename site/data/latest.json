@@ -1,43 +1,43 @@
 {
-  "generated_at": "2026-09-03T21:38:02.016152+08:00",
+  "generated_at": "2026-09-03T13:43:04.884716+00:00",
   "review_scope": "title-and-abstract",
   "stats": {
-    "fetched": 1105,
-    "within_window": 1105,
-    "included": 748,
-    "excluded": 357,
+    "fetched": 1088,
+    "within_window": 1088,
+    "included": 734,
+    "excluded": 354,
     "exclusion_reasons": {
-      "no-topic-match": 252,
+      "no-topic-match": 248,
       "medical": 68,
       "recommender-and-ads": 7,
       "medical, narrow-nlp-task": 2,
       "narrow-nlp-task": 6,
       "medical, recommender-and-ads": 1,
       "finance": 4,
+      "narrow-vision-task": 4,
       "remote-sensing": 12,
-      "medical, remote-sensing": 2,
-      "narrow-vision-task": 3
+      "medical, remote-sensing": 2
     },
     "lookback_hours": 72,
     "queries": {
       "cs.CL": {
-        "returned": 305,
-        "total": 305,
+        "returned": 303,
+        "total": 303,
         "truncated": false
       },
       "cs.AI": {
-        "returned": 464,
-        "total": 464,
+        "returned": 459,
+        "total": 459,
         "truncated": false
       },
       "cs.LG": {
-        "returned": 371,
-        "total": 371,
+        "returned": 365,
+        "total": 365,
         "truncated": false
       },
       "cs.CV": {
-        "returned": 325,
-        "total": 325,
+        "returned": 320,
+        "total": 320,
         "truncated": false
       },
       "stat.ML": {
@@ -2351,56 +2351,6 @@
       ],
       "evidence": [
         "明确的方法贡献：algorithm"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2608.30758",
-      "version": 1,
-      "title": "CheXGround: Anatomical Region Tokens for Grounded Longitudinal Chest X-ray Interpretation",
-      "authors": [
-        "Adonay Demewez Gebremedhin",
-        "Wessam Shehieb",
-        "Sara Alansari",
-        "Mohamad Alansari",
-        "Muzammal Naseer",
-        "Sajid Javed",
-        "Naoufel Werghi"
-      ],
-      "published_at": "2026-08-31T13:25:40+00:00",
-      "updated_at": "2026-08-31T13:25:40+00:00",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "url": "https://arxiv.org/abs/2608.30758v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30758v1",
-      "abstract_en": "Recent radiology multi-modal language models have made substantial progress in chest X-ray report generation, visual question answering, and temporal reasoning. While longitudinal chest X-ray interpretation compares sequential examinations to describe change, visual grounding aims to connect clinical language with localized image evidence. Although longitudinal modeling and visual grounding have each advanced radiology language models, how localized visual evidence can support longitudinal interpretation remains under-explored. We introduce CheXGround, a region-grounded longitudinal chest X-ray language model that represents paired studies through corresponding anatomical regions. CheXGround extracts anatomical regions from current and prior radiographs, encodes them as temporally enhanced Region-of-Interest (ROI) tokens, and combines them with global temporal image context during generation. To connect these region tokens with clinical text, we propose Temporal Region--Phrase Alignment, a pretraining objective that aligns temporal anatomical representations with localized report phrases. We evaluate CheXGround on single-study and longitudinal Visual Question Answering (VQA), longitudinal findings generation, temporal grounded VQA, and anatomical grounding. Across these tasks, CheXGround improves clinical language quality, temporal reasoning, and localization accuracy over recent baselines. Our results suggest that organizing longitudinal evidence at the anatomical level is a strong representation for grounded radiology language modeling. Project page: https://adonaydem.github.io/chexground-website",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "llm",
-        "training",
-        "reasoning"
-      ],
-      "relevance_score": 38.0,
-      "evidence_score": 10.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 48.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 LLM：language model",
-        "匹配 预训练 / 后训练：pretraining",
-        "匹配 推理：reasoning"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose"
       ],
       "limitations": [
         "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
@@ -5966,53 +5916,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2608.30745",
-      "version": 1,
-      "title": "TDDM-Melatt: A Decoupled Memory and Diffusion Framework for Generalizable Encrypted Traffic Classification",
-      "authors": [
-        "Ze Chen",
-        "Qiming Yu",
-        "Zijia Song",
-        "Guozheng Yang",
-        "Wei Yan"
-      ],
-      "published_at": "2026-08-31T13:11:52+00:00",
-      "updated_at": "2026-08-31T13:11:52+00:00",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "url": "https://arxiv.org/abs/2608.30745v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30745v1",
-      "abstract_en": "The widespread adoption of encrypted traffic poses severe challenges to current security situational awareness systems based on network traffic monitoring. In existing dataset-driven training and testing studies, limitations such as shortcut learning induced by spurious feature correlations and sample imbalance caused by the long-tail distribution of real-world traffic result in weak generalization of traffic identification performance to real-world network traffic. To address these limitations, we propose TDDM-Melatt, a disentangled memory-based traffic classification framework with diffusion-based data augmentation. First, we design Melatt, a memory-decoupled traffic representation model, which employs Competitive Gating Long Short-Term Memory (CG-LSTM) to construct the encoder and decoder. We design a spurious-correlation-free pre-training and inference paradigm, employing strict topology anonymization and a frozen pre-trained encoder strategy to cut off the model's learning pathways for spurious features. During inference, classification is performed efficiently by a downstream classifier on the frozen representations. Second, we propose a Traffic Denoising Diffusion Model (TDDM) tailored to the characteristics of traffic data. Extensive experiments are conducted on 4 representative public benchmark datasets. Under strict flow-level splitting and anonymization, TDDM-Melatt outperforms 6 basic classification models and 6 SOTA representation learning models. The proposed method provides a new and effective technical pathway for encrypted traffic classification in real-world network environments.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "training",
-        "evaluation"
-      ],
-      "relevance_score": 17.0,
-      "evidence_score": 22.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 39.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "medium",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 预训练 / 后训练：pre-training",
-        "匹配 评测：benchmark"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose",
-        "实验或理论证据信号：extensive experiment"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.02580",
       "version": 1,
       "title": "Competitive Market Behavior of LLMs",
@@ -6872,53 +6775,6 @@
         "明确的方法贡献：we propose",
         "实验或理论证据信号：extensive experiment",
         "开放资源信号：code is available"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2608.30751",
-      "version": 2,
-      "title": "Autoregressive Mosaics: Probing 2D Spatial Reasoning in Text-Only Language Models",
-      "authors": [
-        "Ashwin Nedungadi",
-        "Stefan Oehmcke",
-        "Stefan Lüdtke"
-      ],
-      "published_at": "2026-08-31T13:18:03+00:00",
-      "updated_at": "2026-09-01T07:36:19+00:00",
-      "categories": [
-        "cs.AI",
-        "cs.CV"
-      ],
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2608.30751v2",
-      "pdf_url": "https://arxiv.org/pdf/2608.30751v2",
-      "abstract_en": "Large language models (LLMs) trained only on text and code can sometimes generate programs that draw recognizable images. However, it is unclear whether this reflects an internal representation of 2D spatial layout or simply the ability to translate spatial descriptions into code. We introduce Autoregressive Mosaics (AM-Bench), a benchmark that separates these factors: First, a translation task gives a model a fully specified geometry of a picture in words as a prompt and asks for the code that produces it. Second, a layout task requires the model to compose an image from an underspecified prompt. Across eight open-weight text-and-code-only models, all models reliably translate specified geometry into code, but their open-ended layout performance differs substantially, indicating that these differences are not explained by code-generation ability alone. An output-medium ablation further shows that the interface or medium of expression that the model uses matters: replacing procedural code with raw SVG improves layout scores across all models. Finally, probing model activations shows that a coarse layout plan is present before generation, but reflects only the layout implied by the prompt. During generation, models track the evolving geometric state instead of executing an initially fixed plan. Overall, these results show that 2D spatial performance in text-only LLMs depends on both the model and the output medium, and is not explained by code-generation ability alone.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "llm",
-        "reasoning",
-        "evaluation"
-      ],
-      "relevance_score": 24.5,
-      "evidence_score": 12.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 36.5,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 LLM：large language model, language model",
-        "匹配 推理：reasoning",
-        "匹配 评测：benchmark"
-      ],
-      "evidence": [
-        "实验或理论证据信号：ablation"
       ],
       "limitations": [
         "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
@@ -8962,59 +8818,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2608.30750",
-      "version": 1,
-      "title": "Do VLMs Share Safety Neurons Across Modalities?",
-      "authors": [
-        "Jiaxuan Li",
-        "Jiahao Zhang",
-        "Duc Minh Vo",
-        "Huy H. Nguyen",
-        "Pride Kavumba",
-        "Koki Wataoka"
-      ],
-      "published_at": "2026-08-31T13:17:41+00:00",
-      "updated_at": "2026-08-31T13:17:41+00:00",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "url": "https://arxiv.org/abs/2608.30750v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30750v1",
-      "abstract_en": "Vision-language models (VLMs) can comply with harmful requests delivered through images, even when their LLM backbones would refuse the same content in text. While prior work characterizes these jailbreaks empirically or at the representation level, how visual inputs perturb safety pathways at the neuron level remains uncharted. We close this gap with a causal, neuron-level analysis of safety mechanisms in 10 VLMs. We propose a two-stage detection pipeline with iterative ablation that accounts for self-repair, and introduce two modality-isolated benchmarks, ViSafe-Detect and ViSafe-Eval, which decouple visual and textual safety signals. Our analysis reveals: (i) Text safety in VLMs is localizable: $\\sim$88 neurons ($<$0.01%) whose targeted ablation substantially reduces refusal. (ii) Text safety neurons constitute the dominant refusal pathway: ablating them is the only intervention that consistently and substantially reduces refusal across all models. (iii) Visual safety is high-dimensional and diffuse at the single-neuron level: text safety concentrates in $\\sim$5 subspace directions while visual safety requires $\\geq$50. This gap holds across architectures, explaining why current alignment has not closed the visual safety gap. Project page is at: https://jiaxuan-li.github.io/vlm-safety-neuron/ Warning: this paper may include examples of harmful content.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "llm",
-        "multimodal",
-        "evaluation",
-        "safety"
-      ],
-      "relevance_score": 19.5,
-      "evidence_score": 22.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 10.0,
-      "overall_score": 31.5,
-      "evidence_grade": "摘要初审",
-      "confidence": "medium",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 LLM：language model",
-        "匹配 MLLM / VLM：vision-language model, vlm",
-        "匹配 评测：benchmark",
-        "匹配 安全：jailbreak",
-        "偏好降权 safety-primary：safety"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose",
-        "实验或理论证据信号：ablation"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.02184",
       "version": 1,
       "title": "CC-4DGS: Computational Deformation and Point-Cloud Compression for Storage-Efficient Dynamic Gaussian Splatting",
@@ -9840,49 +9643,6 @@
         "匹配 LLM：language model",
         "匹配 Agent：agentic",
         "匹配 评测：benchmark, leaderboard"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2608.30760",
-      "version": 1,
-      "title": "PRACTICE: From Experience to Expertise in Self-Evolving Embodied Agents",
-      "authors": [
-        "Ziyi Bai",
-        "Siqi Li",
-        "Tinglei Huang",
-        "Börje F. Karlsson"
-      ],
-      "published_at": "2026-08-31T13:26:16+00:00",
-      "updated_at": "2026-08-31T13:26:16+00:00",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "url": "https://arxiv.org/abs/2608.30760v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30760v1",
-      "abstract_en": "Recent studies have shown that multimodal large language models (MLLMs) can serve as embodied agents, translating language instructions and visual observations into executable plans. However, building agents that can continually improve through interaction and rapidly adapt to their environments remains challenging. Summing up experience from past interaction trajectories provides a promising solution, but existing experience-based methods often rely on manually designed prompting workflows to extract and update skills. Such fixed procedures may struggle to learn updated skills from new and diverse experiences. We introduce PRACTICE, which trains a skill learner to discover and maintain a persistent skill library from past interaction trajectories while keeping the task executor frozen. Given the historical accumulated skills and incoming trajectories, the skill learner produces structured batch-edits that add, refine, merge, or remove skills, and then hierarchical consolidate all collected edits into a consistent updated skill library. We train the learner with a two-stage curriculum. First, it learns basic skill generation and library maintenance from oracle trajectories. Then, by contrasting successful and failed trajectories from heterogeneous executors on the same tasks, it learn to identify invalid action patterns and recovery strategies. Finally, we apply online skill-edit distillation to align the skill learner with a stronger teacher on its current edit distribution to further improves the policy. Experiments demonstrate that a compact skill learner delivers consistent performance improvements across successive library-update rounds for multiple frozen executors. On EB-ALFRED and EB-Habitat, PRACTICE further outperforms the strongest experience-based baselines. Project resources are publicly available at: https://baai-agents.github.io/PRACTICE",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "llm",
-        "multimodal"
-      ],
-      "relevance_score": 30.5,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 30.5,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 LLM：large language model, language model",
-        "匹配 MLLM / VLM：multimodal large language model"
       ],
       "evidence": [],
       "limitations": [
@@ -12052,52 +11812,6 @@
       ],
       "evidence": [
         "实验或理论证据信号：ablation"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2608.30769",
-      "version": 1,
-      "title": "TrainSDC: Characterizing and Mitigating Silent Data Corruption in Large Language Model Training",
-      "authors": [
-        "Zhipeng Xia",
-        "Haotian Xu",
-        "Siyu Yun",
-        "Liqi Lin",
-        "Hu Liu",
-        "Yu Li",
-        "Cheng Zhuo"
-      ],
-      "published_at": "2026-08-31T13:33:26+00:00",
-      "updated_at": "2026-08-31T13:33:26+00:00",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "url": "https://arxiv.org/abs/2608.30769v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30769v1",
-      "abstract_en": "LLM training is increasingly vulnerable to silent data corruption (SDC), yet existing protection methods largely treat Transformer computations uniformly because their vulnerability remains poorly understood. We present the first systematic characterization of SDC vulnerability across major computation interfaces in both the forward and backward passes of Transformer training. Our analysis reveals two distinct error propagation mechanisms: forward-pass vulnerability is highly location dependent, with faults on the Q/K path producing persistent training deviations, whereas backward-pass vulnerability is largely governed by gradient exponent distributions rather than computation locations. Motivated by these observations, we propose TrainSDC, a characterization-guided protection framework consisting of Q/K-path recomputation, residual-gain monitoring, and exponent-aware gradient scaling. Experiments on Llama 3.2-1B and Qwen3-0.6B show that TrainSDC maintains training behavior close to fault-free execution under both sparse and dense fault injection while introducing only 1.65%-6.76% runtime overhead.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "llm"
-      ],
-      "relevance_score": 17.0,
-      "evidence_score": 10.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 27.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 LLM：large language model, language model, transformer"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose"
       ],
       "limitations": [
         "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
@@ -15743,51 +15457,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2608.30782",
-      "version": 1,
-      "title": "PixelIR: Fidelity-Perception Decoupling via Pixel-Space Image-Residual Flow Matching for Efficient One-Step Real-World Super-Resolution",
-      "authors": [
-        "Bingtian Qiao",
-        "Yue Shi",
-        "Yong Guo",
-        "Wenjun Zhang",
-        "Jiezhang Cao"
-      ],
-      "published_at": "2026-08-31T13:39:54+00:00",
-      "updated_at": "2026-08-31T13:39:54+00:00",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "url": "https://arxiv.org/abs/2608.30782v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30782v1",
-      "abstract_en": "Real-world image super-resolution (Real-ISR) aims to preserve structures supported by the degraded observation while reconstructing perceptually realistic details. However, existing Real-ISR methods largely optimize fidelity and perceptual quality within a shared network, causing the two objectives to interfere throughout training and making their balance difficult to control. Recent one-step methods reduce sampling steps, yet often inherit both this coupled optimization behavior and the expensive high-resolution backbone of their multi-step predecessors. We argue that efficient Real-ISR requires not only a shorter sampling trajectory, but also specialized modeling of faithful reconstruction and perceptual detail synthesis. Based on this insight, we propose PixelIR, a fidelity-perception decoupling framework built upon pixel-space image-residual flow matching. PixelIR first learns an image flow that maps the degraded observation to a faithful reconstruction. Then, a residual flow synthesizes the missing perceptual details from noise without repeatedly relearning or overwriting the complete restoration solution. We further distill the teacher into a deployment-oriented one-step student within a coarse-to-fine pyramid architecture. Extensive experiments show that PixelIR achieves leading PSNR, SSIM, and LPIPS on both RealSR and DRealSR. The final model completes pixel-space restoration in a single evaluation with only 32.9M parameters, 89.7G MACs, and 8.5ms latency, demonstrating a strong practical fidelity-perception-efficiency balance.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 1.0,
-      "evidence_score": 22.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 23.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "medium",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：evaluation"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose",
-        "实验或理论证据信号：extensive experiment"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.02315",
       "version": 1,
       "title": "DiffIE: Diffusion-based Open Information Extraction",
@@ -17046,52 +16715,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2608.30754",
-      "version": 1,
-      "title": "CLIN: an Objective Framework for Evaluating Creativity in Short Persian Literary Text",
-      "authors": [
-        "Mohammad Reza Modarres",
-        "Armin Tourajmehr",
-        "Yadollah Yaghoobzadeh",
-        "Mohammad Taher Pilehvar"
-      ],
-      "published_at": "2026-08-31T13:22:20+00:00",
-      "updated_at": "2026-08-31T13:22:20+00:00",
-      "categories": [
-        "cs.CL"
-      ],
-      "primary_category": "cs.CL",
-      "url": "https://arxiv.org/abs/2608.30754v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30754v1",
-      "abstract_en": "Evaluating creativity in large language model (LLM) outputs remains challenging because creativity is multidimensional and human-centered. We examine how reliably LLMs evaluate short literary text in Persian, a low-resource language, across multiple evaluation strategies and prompt formulations. We find that LLM-human agreement varies substantially across dimensions: alignment is stronger for structured TTCT-derived properties such as Originality, Fluency, and Elaboration, but considerably weaker for more subjective dimensions, particularly Emotion and Attractiveness. Judgments are also sensitive to prompt formulation, while few-shot prompting, ensembling, and multi-agent debate provide no consistent improvement. Motivated by this dimension-dependent behavior, we investigate whether structured creativity dimensions can instead be approximated using simple, interpretable proxy metrics. We introduce CLIN, which evaluates three TTCT-derived dimensions separately using topic-aware novelty for Originality, contextual lexical clustering for Fluency, and lexical diversity for Elaboration. These proxies achieve human alignment comparable to or better than the strongest zero-shot LLM judge in our setting while requiring substantially lower evaluation cost.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "llm",
-        "agent",
-        "evaluation"
-      ],
-      "relevance_score": 32.0,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 12.0,
-      "overall_score": 20.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 LLM：large language model, language model",
-        "匹配 Agent：multi-agent",
-        "匹配 评测：evaluation, evaluating",
-        "偏好降权 benchmark-primary：evaluating"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.02783",
       "version": 1,
       "title": "EarlyEval: Cheaper Agent Evaluation via Early Outcome Prediction",
@@ -17604,53 +17227,6 @@
       ],
       "evidence": [
         "明确的方法贡献：we propose"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2608.30753",
-      "version": 1,
-      "title": "Learning from What You Retrieve: Online RL Fine-Tuning for Semantic Retrieval",
-      "authors": [
-        "Shaowei Wei",
-        "Chong Huang",
-        "Songtao Fang",
-        "Jin Zhang",
-        "Zhuojun Wang",
-        "Chengfu Huo"
-      ],
-      "published_at": "2026-08-31T13:21:47+00:00",
-      "updated_at": "2026-08-31T13:21:47+00:00",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "primary_category": "cs.IR",
-      "url": "https://arxiv.org/abs/2608.30753v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30753v1",
-      "abstract_en": "In large-scale e-commerce retrieval, dual-encoder retrievers are op- timized for contrastive similarity, whereas downstream rerankers capture finer-grained relevance preferences; this objective mis- match limits end-to-end retrieval quality. Reinforcement Learning offers a way to use reward-model feedback for retriever adaptation, but we observe that standard policy-gradient updates can degrade embedding geometry, especially when the document index must remain frozen due to industrial constraints. To address this, we propose PAO (Positive-Advantage-Only), a selective RL optimization method. Our analysis reveals that in- discriminate penalization of negative samples (pushing away) in a frozen high-dimensional space disrupts pre-trained semantic man- ifolds. PAO selectively applies gradient updates only to retrieved items with positive advantages, effectively pulling query embed- dings toward high-reward regions while preserving global topo- logical stability. Experiments on both a massive industrial dataset and public benchmarks demonstrate that PAO significantly outper- forms standard RL and distillation baselines.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 1.0,
-      "evidence_score": 18.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 19.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：benchmark"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose",
-        "规模化信号：large-scale"
       ],
       "limitations": [
         "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
@@ -20853,48 +20429,6 @@
       "url": "https://arxiv.org/abs/2608.30976v1",
       "pdf_url": "https://arxiv.org/pdf/2608.30976v1",
       "abstract_en": "Real-world time-series forecasting is rarely a one-shot model invocation: practitioners must formulate tasks, connect data and models, incorporate domain expertise, assess prediction plausibility, and communicate uncertainty. Specialized forecasting models provide strong numerical predictions but usually operate in fixed pipelines, while general-purpose large language model (LLM) agents often lack forecasting-specific checks, constraints, and stopping rules. We present CastClaw, a human-in-the-loop autonomous forecasting system built through forecasting-oriented harness engineering. CastClaw connects data, specialized models, analytical tools, user input, and a versioned execution record in one runtime. Users specify the target, horizon, constraints, and hypotheses in natural language. Starting from a supplied or model-generated forecast, CastClaw checks temporal patterns and user constraints; when evidence is missing, it retrieves context, runs an analysis or another model, or asks the user. It then keeps, revises, or escalates the result under explicit stopping conditions. The output contains the final forecast and an execution report recording inputs, evidence, actions, and revisions. In this five-dataset electricity-price setting, CastClaw reports the lowest point-estimate MSE and MAE among 16 baselines. A Nord Pool case demonstrates the inspectable workflow. CastClaw was also validated offline on provincial electricity-load data from North China covering January--June 2026.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "llm"
-      ],
-      "relevance_score": 15.5,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 15.5,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 LLM：large language model, language model"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2608.30756",
-      "version": 1,
-      "title": "On the Prospects of Dynamic LLM Conversations in Software Development",
-      "authors": [
-        "Annemarie Wittig",
-        "Alina Mailach",
-        "Janet Siegmund",
-        "Norbert Siegmund"
-      ],
-      "published_at": "2026-08-31T13:24:26+00:00",
-      "updated_at": "2026-08-31T13:24:26+00:00",
-      "categories": [
-        "cs.SE",
-        "cs.AI"
-      ],
-      "primary_category": "cs.SE",
-      "url": "https://arxiv.org/abs/2608.30756v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30756v1",
-      "abstract_en": "Large language models (LLMs) have become an essential tool for assisting developers, yet we still lack knowledge on ways to effectively support their interactions during development activities. That is, the quality of interactions with a chat-based LLM still strongly depends on how developers phrase prompts and which information they include. Our goal is to evaluate whether interventions into these interactions with LLMs have an effect on software developers---be it harmful or beneficial. To this end, we conducted a four-month longitudinal study with third-semester computer science students working on a full-stack Web development project using chat-based LLMs under three conditions: (1) a \\emph{context}-aware group received intent-based conversation augmentation, (2) a \\emph{proactive} group received follow-up suggestions and tailored advice, and (3) a \\emph{control} group without intervention. Our augmentations are minimal: (i) to reduce confounding factors and (ii) to isolate treatment effects. Analyzing interaction logs and user surveys revealed no major differences in interaction patterns, indicating no detectable harmful effects in the measured outcomes when intervening in interactions. Moreover, we observed trends of increased satisfaction with the \\emph{proactive} treatment. The results indicate that even with minimal interventions, dynamic guidance mechanisms for developer-LLM interactions show observable effects, such that more severe augmentations may have the potential to substantially improve developer satisfaction.",
       "abstract_zh": null,
       "tldr_zh": null,
       "topics": [
@@ -32735,89 +32269,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2608.30785",
-      "version": 1,
-      "title": "SkillZip Pro: Execution-Aware Dynamic Compression of Progressively Loaded Skills for Self-Evolving Agents",
-      "authors": [
-        "Xiaofan Bai",
-        "Chao Liu",
-        "Hongqiang Lin",
-        "Di Wu",
-        "Mingli Song",
-        "Xuan Jin",
-        "Xipeng Cao",
-        "Yuhong Li"
-      ],
-      "published_at": "2026-08-31T13:41:16+00:00",
-      "updated_at": "2026-08-31T13:41:16+00:00",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2608.30785v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30785v1",
-      "abstract_en": "Production agent skills are directory bundles, not isolated prompts. The root is loaded at activation; references, schemas, scripts, assets, and nested subskills are loaded only when an execution path needs them. Compressing only the root misses most deployment cost and may move branch-specific details into the always-loaded context. Flattening instead destroys progressive-loading boundaries. We introduce \\method, an evaluation-free compressor for complete, progressively loaded skill bundles. It leaves the agent harness unchanged and emits an ordinary directory. The method combines two safeguards. First, it compresses \\emph{across files}, removing content from a reference or subskill when the root or a declared environment contract already provides it. Second, it preserves routing, so every required file and directly callable entry remains reachable after rewriting. Users can configure \\method along two independent axes. \\emph{One-Shot} mode rebuilds the full bundle; \\emph{Continual} mode reuses state and applies Zip-on-Write after each evolution patch. \\emph{Persistent} compression rewrites the shipped bundle to reduce storage and runtime context. \\emph{Transient} compression keeps that bundle byte-identical and builds a task-specific view, reducing only per-run context after build cost. Entry contracts mark private, public, and conditional resources; a multi-entry audit preserves standalone public subskills. On a production content-moderation skill evaluated by our industrial multi-round harness, \\method removes \\hl{38\\%} of skill bundle tokens and \\hl{10.4\\%} of end-to-end per-run tokens with no quality loss, while an unprotected 71\\% configuration loses up to 26 accuracy points to one-sided false positives. On a multi-entry bundle, \\method effeciently reduces token cost while near-perfectly preserving every route and public entry.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 1.0,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 1.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：evaluation"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2608.30762",
-      "version": 1,
-      "title": "ChessQueries: Toward Better Chess Board Recognition",
-      "authors": [
-        "Joël Seytre"
-      ],
-      "published_at": "2026-08-31T13:26:52+00:00",
-      "updated_at": "2026-08-31T13:26:52+00:00",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "url": "https://arxiv.org/abs/2608.30762v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30762v1",
-      "abstract_en": "Chess board recognition is the task of mapping the image of a chess board to the information of which piece is on which square. So far this task has two established benchmarks: ChessCog is synthetic, and ChessReD comes from smartphone pictures of a single chess board setup. We introduce ChessQueries, a new method combining a ViT encoder with a DETR-style decoder, which outperforms existing methods. On the ChessReD benchmark, we improve the state of the art from 15.3% to 99.2%, and demonstrate strong capabilities on out-of-distribution datasets. Our method saturates the task on the two datasets, with an average 0.01 wrong squares per board (vs. SotA: 3.4 / 0.15 respectively). We also share a new, harder public dataset, parsed from broadcasted top-level chess tournaments. Code, model weights and the SLCC data will be released.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 1.0,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 1.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：benchmark"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.02304",
       "version": 1,
       "title": "Bayes-Optimal BER and AUC: Estimation and Evaluation of Estimators",
@@ -34172,97 +33623,6 @@
         "匹配 推理：reasoning",
         "匹配 评测：benchmark, evaluation",
         "偏好降权 benchmark-primary：benchmark"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2608.30768",
-      "version": 1,
-      "title": "CORAL: A Benchmark for Structure-aware and Brain-wide Neuron Reconstruction in Light Microscopy",
-      "authors": [
-        "Zekang Yang",
-        "Jiamin Li",
-        "Zhenghua Li",
-        "Jiaqi Fan",
-        "Zengcai Guo",
-        "Xiaolin Hu"
-      ],
-      "published_at": "2026-08-31T13:32:59+00:00",
-      "updated_at": "2026-08-31T13:32:59+00:00",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "url": "https://arxiv.org/abs/2608.30768v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30768v1",
-      "abstract_en": "Automatic neuron reconstruction from light microscopy images is a central problem in computational neuroanatomy. While recent methods have achieved encouraging results on local image blocks, it remains unclear whether such progress translates to reconstruction that is both structurally accurate and scalable to the whole-brain scale. We present CORAL, the first benchmark for structure-aware evaluation of automatic neuron reconstruction from light microscopy images at both local and whole-brain scales. Built on a high-quality whole-brain fMOST dataset with carefully curated annotations, CORAL establishes two progressive tasks: block-level reconstruction, which evaluates reconstruction methods under limited spatial context, and brain-wide reconstruction, which assesses complete neuron reconstruction at the whole-brain scale. To account for topological correctness beyond geometric distance similarity, we introduce a structure-aware metric based on fiber prediction. To further achieve complete neuron reconstruction across the entire brain, we develop a brain-wide neuron tracing framework that extends arbitrary local reconstruction methods to the whole-brain scale through an iterative local-to-global process. Using this benchmark, we provide the first structure-aware comparison of mainstream methods for local neuron reconstruction and further evaluate their performance in brain-wide reconstruction. Our results underscore the importance of structure-aware evaluation and the need for more robust methods for complete neuron reconstruction.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 2.5,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 12.0,
-      "overall_score": 0.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：benchmark, evaluation",
-        "偏好降权 benchmark-primary：benchmark"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2608.30748",
-      "version": 1,
-      "title": "The Fragility of Jailbreak Robustness Across Operational States",
-      "authors": [
-        "Yuna Park",
-        "Hwang Youn Kim",
-        "Yujin Kim",
-        "Won Woo Ro",
-        "Suhyun Kim",
-        "Jae-In Hwang"
-      ],
-      "published_at": "2026-08-31T13:14:47+00:00",
-      "updated_at": "2026-08-31T13:14:47+00:00",
-      "categories": [
-        "cs.CR",
-        "cs.CL"
-      ],
-      "primary_category": "cs.CR",
-      "url": "https://arxiv.org/abs/2608.30748v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.30748v1",
-      "abstract_en": "Existing jailbreak evaluations typically characterize robustness using a single attack success rate (ASR) measured in a default configuration (the vanilla state). However, user-LLM interactions can induce diverse operational states beyond the vanilla state. In this work, we find that jailbreak robustness is highly fragile to operational-state variation: even when the attack remains fixed, changing only an ordinary system prompt not designed to affect safety can dramatically alter attack success rates. We systematically investigate this phenomenon across seven aligned models and three representative jailbreak attacks, observing substantial differences in ASR between vanilla and non-vanilla operational states. In one case, ASR increases by up to 56 percentage points (2% to 58%) solely due to a change in operational state. Remarkably, these increases occur even for attacks originally designed and optimized under vanilla-state evaluation. We further show that state-dependent robustness variation is systematically associated with differences in hidden representations along a refusal-related axis, and that projections onto this axis strongly predict jailbreak outcomes. Our results show that a single vanilla-state evaluation may not fully characterize jailbreak robustness, motivating evaluations that also examine how robustness changes across non-vanilla operational states.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation",
-        "safety"
-      ],
-      "relevance_score": 0.0,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 10.0,
-      "overall_score": 0.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：evaluation",
-        "匹配 安全：jailbreak",
-        "偏好降权 safety-primary：jailbreak"
       ],
       "evidence": [],
       "limitations": [
