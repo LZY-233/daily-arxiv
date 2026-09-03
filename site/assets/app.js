@@ -30,20 +30,13 @@ function visiblePapers() {
           ? local.ignored
           : paper.tier === state.tier;
     const topicMatch = state.topic === "all" || (paper.topics || []).includes(state.topic);
-    const haystack = `${paper.title} ${(paper.authors || []).join(" ")} ${paper.abstract_en}`.toLowerCase();
+    const haystack = `${paper.title} ${(paper.authors || []).join(" ")} ${paper.abstract_en} ${paper.abstract_zh || ""} ${paper.tldr_zh || ""}`.toLowerCase();
     return tierMatch && topicMatch && (!query || haystack.includes(query)) && (state.tier === "ignored" || !local.ignored);
   });
   const tierOrder = { must_read: 0, browse: 1, watch: 2 };
   return filtered.sort((a, b) => state.sort === "newest"
     ? new Date(b.updated_at) - new Date(a.updated_at)
     : (tierOrder[a.tier] - tierOrder[b.tier]) || (b.overall_score - a.overall_score));
-}
-
-function fillList(list, values) {
-  list.innerHTML = "";
-  (values?.length ? values : ["摘要中未发现明确证据信号。"]).forEach(value => {
-    const item = document.createElement("li"); item.textContent = value; list.append(item);
-  });
 }
 
 function makeCard(paper, index) {
@@ -58,20 +51,31 @@ function makeCard(paper, index) {
   const title = card.querySelector(".paper-title"); title.textContent = paper.title; title.href = paper.url;
   card.querySelector(".authors").textContent = paper.authors.join(" · ");
   card.querySelector(".topics").innerHTML = (paper.topics || []).map(topic => `<span class="topic">${escapeHtml(topicLabels[topic] || topic)}</span>`).join("");
-  card.querySelector(".abstract").textContent = paper.abstract_zh || paper.abstract_en;
-  fillList(card.querySelector(".why-list"), paper.why_it_matters);
-  fillList(card.querySelector(".evidence-list"), paper.evidence);
-  card.querySelector(".limitations").textContent = (paper.limitations || []).join(" ");
+  const hasChinese = Boolean(paper.abstract_zh);
+  const abstract = card.querySelector(".abstract");
+  const abstractText = paper.abstract_zh || paper.abstract_en;
+  abstract.textContent = abstractText;
+  card.querySelector(".abstract-label").textContent = hasChinese ? "中文摘要" : "英文摘要";
+  const toggle = card.querySelector(".abstract-toggle");
+  toggle.hidden = abstractText.length < 160;
+  toggle.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!expanded));
+    toggle.textContent = expanded ? "展开摘要" : "收起摘要";
+    abstract.classList.toggle("is-collapsed", expanded);
+  });
+  const tldrBlock = card.querySelector(".tldr-block");
+  if (paper.tldr_zh) {
+    tldrBlock.hidden = false;
+    card.querySelector(".tldr").textContent = paper.tldr_zh;
+  }
+  const original = card.querySelector(".original-abstract");
+  if (hasChinese) {
+    original.hidden = false;
+    card.querySelector(".abstract-original").textContent = paper.abstract_en;
+  }
   card.querySelector(".abs-link").href = paper.url;
   card.querySelector(".pdf-link").href = paper.pdf_url;
-  card.querySelector(".score").textContent = Math.round(paper.overall_score);
-  card.querySelector(".relevance").textContent = `${paper.relevance_score} / 64`;
-  card.querySelector(".evidence-score").textContent = `${paper.evidence_score} / 36`;
-  card.querySelector(".preference-boost").textContent = `+${paper.preference_boost || 0}`;
-  card.querySelector(".preference-penalty").textContent = `−${paper.preference_penalty || 0}`;
-  const ring = card.querySelector(".score-ring");
-  const hue = Math.max(0, Math.min(120, paper.overall_score * 1.2));
-  ring.style.borderColor = `hsl(${hue} 53% 39%)`;
   [["save", "saved"], ["read", "read"], ["ignore", "ignored"]].forEach(([name, key]) => {
     const button = card.querySelector(`.${name}-button`);
     button.classList.toggle("active", local[key]);

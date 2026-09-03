@@ -2,7 +2,7 @@
 
 Daily arXiv 是一个面向基础模型研究者的个性化论文雷达。它每天增量读取 arXiv 元数据，按研究主题、方法贡献和摘要中的证据信号进行初筛，将结果保存为可审计的 JSONL，并生成一个无需后端的静态阅读页面。
 
-当前版本是本地 MVP：不需要模型 API Key，也不会下载或保存论文 PDF。英文摘要来自 arXiv；中文摘要与正文深度评审将在后续模型层接入后补充。
+当前版本会为每日精选论文生成中文摘要与一句话 TL;DR，同时不会下载或保存论文 PDF。AI 增强是可选步骤：未配置 API Key 或接口暂时失败时，抓取、排序和网页发布仍会继续，页面自动回退到 arXiv 英文摘要。
 
 ## 研究偏好
 
@@ -34,6 +34,15 @@ python -m http.server 8000 --directory site
 ```powershell
 python scripts/daily.py --lookback-hours 72 --max-results 1000
 ```
+
+如需在本地生成中文摘要，请仅通过环境变量提供 Key：
+
+```powershell
+$env:OPENAI_API_KEY = "你的 API Key"
+python scripts/daily.py --lookback-hours 72 --max-results 1000
+```
+
+默认使用 `gpt-5.4-mini`，只处理 5 篇“必读”和 10 篇“值得浏览”；已生成内容会从月度 JSONL 缓存复用。可用 `OPENAI_MODEL`、`OPENAI_ENRICH_LIMIT` 和 `OPENAI_BATCH_SIZE` 环境变量调整模型、篇数和批量大小。
 
 调整主题或权重后，可直接重排本地缓存，无需重复请求 arXiv：
 
@@ -67,17 +76,25 @@ tests/                  单元测试和离线 arXiv 样本
 - 收藏、已读和忽略状态只写入浏览器 `localStorage`。
 - API Key 只允许放入环境变量或 GitHub Actions Secrets，禁止提交到仓库。
 
+## GitHub Actions 中配置 API Key
+
+1. 打开仓库的 `Settings → Secrets and variables → Actions`。
+2. 在 `Secrets` 页签点击 `New repository secret`，名称填写 `OPENAI_API_KEY`，值填写 API Key。
+3. 可选：在 `Variables` 页签添加 `OPENAI_MODEL`；不设置时使用 `gpt-5.4-mini`。
+4. 在 `Actions` 页重新运行 `Daily arXiv radar`，或等待下一次定时任务。
+
+工作流只通过 `secrets.OPENAI_API_KEY` 将 Key 注入单个抓取步骤的环境变量，Key 不进入代码、数据文件或提交记录。若 Secret 不存在，GitHub 会传入空值，程序记录 `skipped_no_key` 后继续发布英文摘要。
+
 ## 当前边界
 
 - 相关性和证据评分是可解释的规则基线，不是模型评审。
-- 中文摘要字段暂为空，网站会回退显示英文摘要。
+- 中文摘要与 TL;DR 仅依据标题和 arXiv 摘要生成，不代表已阅读全文；页面保留英文原摘要供核对。
 - 当前 API 按分类查询首次提交时间窗口、跨分类去重，并报告每个分类是否触及结果上限；旧论文的新版本复查将在延迟复评阶段补充。
 - 尚未执行 PDF 正文审查、7/30 天延迟复评或外部引用/代码活跃度检查。
-- GitHub Actions 与 Pages 工作流已提供，但在推送远程仓库并完成仓库设置前不会运行。
+- GitHub Actions 在工作日北京时间 10:07 自动更新数据并部署 GitHub Pages，也可手动运行。
 
 ## 后续阶段
 
 1. 用数日真实结果校准召回词、排除词和评分阈值。
-2. 接入可配置的模型提供商，生成中文摘要、TL;DR 和结构化初审。
-3. 只对高优先级论文进行 PDF 关键章节深审。
-4. 增加每周回顾、7/30 天复评和可导出的用户反馈。
+2. 只对高优先级论文进行 PDF 关键章节深审。
+3. 增加每周回顾、7/30 天复评和可导出的用户反馈。

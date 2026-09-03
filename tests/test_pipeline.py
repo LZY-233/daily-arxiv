@@ -6,6 +6,7 @@ import tempfile
 import unittest
 from datetime import datetime
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,6 +16,7 @@ from daily_arxiv.pipeline import run_pipeline  # noqa: E402
 
 
 class PipelineTests(unittest.TestCase):
+    @patch.dict("os.environ", {"OPENAI_API_KEY": ""}, clear=False)
     def test_pipeline_filters_window_exclusions_and_deduplicates(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             work = Path(temp)
@@ -31,6 +33,7 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(7, first["stats"]["included"])
             self.assertEqual(7, first["stats"]["new_records"])
             self.assertEqual(0, second["stats"]["new_records"])
+            self.assertEqual("skipped_no_key", first["stats"]["enrichment"]["status"])
             payload = json.loads((work / "data" / "latest.json").read_text(encoding="utf-8"))
             self.assertEqual(5, sum(p["tier"] == "must_read" for p in payload["papers"]))
             self.assertTrue((work / "site" / "data" / "latest.json").exists())

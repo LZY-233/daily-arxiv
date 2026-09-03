@@ -12,6 +12,27 @@ def _json_line(value: dict) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True)
 
 
+def load_enrichment_cache(data_dir: Path) -> dict[tuple[str, int], dict[str, str]]:
+    """Load previously generated Chinese text so recurring runs do not pay twice."""
+    cache: dict[tuple[str, int], dict[str, str]] = {}
+    papers_dir = data_dir / "papers"
+    if not papers_dir.exists():
+        return cache
+    for path in sorted(papers_dir.glob("*.jsonl")):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            item = json.loads(line)
+            abstract_zh = item.get("abstract_zh")
+            tldr_zh = item.get("tldr_zh")
+            if abstract_zh and tldr_zh:
+                cache[(item["arxiv_id"], int(item["version"]))] = {
+                    "abstract_zh": abstract_zh,
+                    "tldr_zh": tldr_zh,
+                }
+    return cache
+
+
 def merge_monthly_papers(data_dir: Path, papers: Iterable[Paper]) -> tuple[list[Path], int]:
     papers = list(papers)
     if not papers:

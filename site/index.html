@@ -48,7 +48,7 @@
           <div class="filter-row">
             <label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜索标题、作者或摘要…" /></label>
             <select id="topic-filter" aria-label="按主题筛选"><option value="all">所有主题</option></select>
-            <select id="sort-order" aria-label="排序方式"><option value="score">按综合分数</option><option value="newest">按更新时间</option></select>
+            <select id="sort-order" aria-label="排序方式"><option value="score">按推荐顺序</option><option value="newest">按更新时间</option></select>
           </div>
         </div>
       </section>
@@ -73,19 +73,20 @@
           <h3><a class="paper-title" target="_blank" rel="noreferrer"></a></h3>
           <p class="authors"></p>
           <div class="topics"></div>
-          <p class="abstract"></p>
-          <details>
-            <summary>查看评分依据与局限</summary>
-            <div class="evidence-grid"><div><h4>为什么相关</h4><ul class="why-list"></ul></div><div><h4>证据信号</h4><ul class="evidence-list"></ul></div></div>
-            <p class="limitations"></p>
+          <div class="tldr-block" hidden><span>TL;DR</span><p class="tldr"></p></div>
+          <div class="abstract-block">
+            <div class="abstract-heading"><span class="abstract-label">摘要</span><button class="abstract-toggle" type="button" aria-expanded="false">展开摘要</button></div>
+            <p class="abstract is-collapsed"></p>
+          </div>
+          <details class="original-abstract" hidden>
+            <summary>查看英文原摘要</summary>
+            <p class="abstract-original"></p>
           </details>
-          <div class="paper-links"><a class="abs-link" target="_blank" rel="noreferrer">ARXIV ↗</a><a class="pdf-link" target="_blank" rel="noreferrer">PDF ↗</a></div>
+          <div class="paper-footer">
+            <div class="paper-links"><a class="abs-link" target="_blank" rel="noreferrer">ARXIV ↗</a><a class="pdf-link" target="_blank" rel="noreferrer">PDF ↗</a></div>
+            <div class="actions"><button class="save-button" title="收藏" aria-label="收藏">☆</button><button class="read-button" title="标记已读" aria-label="标记已读">✓</button><button class="ignore-button" title="忽略" aria-label="忽略">×</button></div>
+          </div>
         </div>
-        <aside class="score-panel">
-          <div class="score-ring"><strong class="score"></strong><span>/ 100</span></div>
-          <div class="score-breakdown"><p><span>相关性</span><strong class="relevance"></strong></p><p><span>证据信号</span><strong class="evidence-score"></strong></p><p><span>偏好加分</span><strong class="preference-boost"></strong></p><p><span>偏好降权</span><strong class="preference-penalty"></strong></p></div>
-          <div class="actions"><button class="save-button" title="收藏">☆</button><button class="read-button" title="标记已读">✓</button><button class="ignore-button" title="忽略">×</button></div>
-        </aside>
       </article>
     </template>
     <script src="assets/app.js" defer></script>

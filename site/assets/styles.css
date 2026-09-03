@@ -56,7 +56,7 @@ select { max-width: 145px; padding: 8px 28px 8px 10px; border: 1px solid var(--l
 .section-heading h2 { margin: 0; font: 700 32px Georgia, "Noto Serif SC", serif; }
 .section-heading p { color: var(--muted); font: 700 11px ui-monospace, monospace; }
 .paper-list { border-top: 2px solid var(--ink); }
-.paper-card { display: grid; grid-template-columns: 86px minmax(0,1fr) 150px; gap: 28px; padding: 34px 12px 34px 0; border-bottom: 1px solid var(--ink); transition: background .2s; }
+.paper-card { display: grid; grid-template-columns: 86px minmax(0,1fr); gap: 28px; padding: 34px 12px 34px 0; border-bottom: 1px solid var(--ink); transition: background .2s; }
 .paper-card:hover { background: rgba(255,255,255,.26); }
 .paper-card.is-read { opacity: .58; }
 .paper-card.is-ignored { display: none; }
@@ -74,23 +74,25 @@ select { max-width: 145px; padding: 8px 28px 8px 10px; border: 1px solid var(--l
 .authors { margin: 0 0 14px; color: var(--muted); font-size: 12px; }
 .topics { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 17px; }
 .topic { padding: 4px 7px; border: 1px solid var(--line); color: #4d4a44; font-size: 10px; font-weight: 700; }
-.abstract { display: -webkit-box; margin: 0; overflow: hidden; color: #434039; font: 14px/1.78 Georgia, "Noto Serif SC", serif; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
-details { margin-top: 18px; padding-top: 13px; border-top: 1px dashed var(--line); }
-summary { color: var(--blue); cursor: pointer; font-size: 12px; font-weight: 700; }
-.evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.evidence-grid h4 { margin-bottom: 7px; font-size: 11px; }
-.evidence-grid ul { margin: 0; padding-left: 17px; color: var(--muted); font-size: 11px; line-height: 1.65; }
-.limitations { color: var(--red); font-size: 11px; }
-.paper-links { display: flex; gap: 18px; margin-top: 18px; }
+.tldr-block { display: grid; grid-template-columns: 54px minmax(0,1fr); gap: 12px; margin: 2px 0 20px; padding: 14px 16px; border-left: 3px solid var(--red); background: rgba(255,255,255,.38); }
+.tldr-block[hidden] { display: none; }
+.tldr-block span { padding-top: 2px; color: var(--red); font: 800 10px ui-monospace, monospace; letter-spacing: .08em; }
+.tldr { margin: 0; color: #302e29; font-size: 14px; font-weight: 650; line-height: 1.7; }
+.abstract-block { margin-top: 4px; }
+.abstract-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.abstract-label { color: var(--muted); font: 800 10px ui-monospace, monospace; letter-spacing: .1em; }
+.abstract-toggle { padding: 2px 0; border: 0; color: var(--blue); background: transparent; font-size: 11px; font-weight: 750; }
+.abstract-toggle[hidden] { display: none; }
+.abstract { margin: 0; color: #434039; font: 14px/1.78 Georgia, "Noto Serif SC", serif; }
+.abstract.is-collapsed { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 4; -webkit-box-orient: vertical; }
+.original-abstract { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.original-abstract[hidden] { display: none; }
+summary { color: var(--blue); cursor: pointer; font-size: 11px; font-weight: 700; }
+.abstract-original { margin: 12px 0 0; color: var(--muted); font: 13px/1.72 Georgia, serif; }
+.paper-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 20px; }
+.paper-links { display: flex; gap: 18px; }
 .paper-links a { color: var(--ink); font: 800 10px ui-monospace, monospace; letter-spacing: .08em; }
-.score-panel { display: flex; flex-direction: column; align-items: center; padding-left: 20px; border-left: 1px solid var(--line); }
-.score-ring { width: 100px; height: 100px; display: grid; place-content: center; border: 7px solid var(--red); border-radius: 50%; text-align: center; }
-.score-ring strong { display: block; font: 700 32px/1 Georgia, serif; }
-.score-ring span { color: var(--muted); font-size: 9px; }
-.score-breakdown { width: 100%; margin-top: 17px; }
-.score-breakdown p { display: flex; justify-content: space-between; margin: 7px 0; color: var(--muted); font-size: 10px; }
-.score-breakdown strong { color: var(--ink); }
-.actions { display: flex; gap: 5px; margin-top: auto; padding-top: 18px; }
+.actions { display: flex; gap: 5px; }
 .actions button { width: 33px; height: 33px; border: 1px solid var(--line); background: transparent; font-weight: 800; }
 .actions button:hover, .actions button.active { color: var(--paper); border-color: var(--ink); background: var(--ink); }
 .empty { padding: 80px; text-align: center; }
@@ -103,10 +105,6 @@ footer { display: flex; justify-content: space-between; padding-block: 24px 40px
   .filter-row { width: 100%; }
   .search { flex: 1; min-width: 0; }
   .paper-card { grid-template-columns: 55px minmax(0,1fr); }
-  .score-panel { grid-column: 2; flex-direction: row; justify-content: space-between; padding: 16px 0 0; border: 0; border-top: 1px solid var(--line); }
-  .score-ring { width: 74px; height: 74px; border-width: 5px; }
-  .score-breakdown { width: 145px; margin: 0; }
-  .actions { margin: 0; padding: 0; }
 }
 
 @media (max-width: 560px) {
@@ -122,7 +120,7 @@ footer { display: flex; justify-content: space-between; padding-block: 24px 40px
   .paper-card { grid-template-columns: 1fr; gap: 16px; padding-right: 0; }
   .rank { align-items: center; flex-direction: row; border-right: 0; }
   .rank-number { font-size: 25px; }
-  .score-panel { grid-column: 1; }
-  .evidence-grid { grid-template-columns: 1fr; gap: 4px; }
+  .tldr-block { grid-template-columns: 1fr; gap: 5px; }
+  .paper-footer { align-items: flex-start; flex-direction: column; }
   footer { flex-direction: column; }
 }

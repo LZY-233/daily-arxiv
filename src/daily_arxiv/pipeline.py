@@ -1,13 +1,15 @@
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
 from .arxiv import Paper, fetch_category_feeds, load_feed, parse_atom
+from .enrichment import DEFAULT_MODEL, enrich_papers
 from .ranking import assign_tiers, rank_paper
-from .storage import append_run_log, merge_monthly_papers, write_latest
+from .storage import append_run_log, load_enrichment_cache, merge_monthly_papers, write_latest
 
 
 def load_config(path: Path) -> dict[str, Any]:
@@ -18,6 +20,13 @@ def load_cached_papers(path: Path) -> tuple[list[Paper], dict[str, Any]]:
     payload = json.loads(path.read_text(encoding="utf-8"))
     papers = [Paper(**item) for item in payload.get("papers", [])]
     return papers, payload.get("stats", {})
+
+
+def _positive_env_int(name: str, default: int) -> int:
+    try:
+        return max(1, int(os.getenv(name, str(default))))
+    except ValueError:
+        return default
 
 
 def _in_window(paper: Paper, now: datetime, lookback_hours: int) -> bool:
@@ -78,6 +87,15 @@ def run_pipeline(
             reason = result.exclusion_reason or "unknown"
             exclusion_counts[reason] = exclusion_counts.get(reason, 0) + 1
     ranked = assign_tiers(included, int(config["must_read_count"]), int(config["browse_count"]))
+    data_dir = root / "data"
+    enrichment_stats = enrich_papers(
+        ranked,
+        cache=load_enrichment_cache(data_dir),
+        api_key=os.getenv("OPENAI_API_KEY", "").strip(),
+        model=os.getenv("OPENAI_MODEL", "").strip() or DEFAULT_MODEL,
+        limit=_positive_env_int("OPENAI_ENRICH_LIMIT", 15),
+        batch_size=_positive_env_int("OPENAI_BATCH_SIZE", 5),
+    )
     stats = {
         "fetched": cached_stats.get("fetched", len(fetched)),
         "within_window": cached_stats.get("within_window", len(recent)),
@@ -89,8 +107,8 @@ def run_pipeline(
         "truncated_categories": [
             category for category, query in query_stats.items() if query["truncated"]
         ],
+        "enrichment": enrichment_stats,
     }
-    data_dir = root / "data"
     site_dir = root / "site"
     new_records = 0
     monthly_paths: list[Path] = []

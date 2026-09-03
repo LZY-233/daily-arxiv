@@ -34,6 +34,9 @@ jobs:
         run: python -m unittest discover -s tests -v
 
       - name: Fetch and rank recent papers
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
         run: python scripts/daily.py --lookback-hours 72 --max-results 1000
 
       - name: Commit updated data
