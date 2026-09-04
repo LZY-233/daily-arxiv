@@ -63,9 +63,10 @@ class EnrichmentTests(unittest.TestCase):
 
         result = request_summaries([paper], api_key="test-key", model="test-model", opener=opener)
         request_body = json.loads(captured["request"].data.decode("utf-8"))
+        self.assertEqual("https://api.deepseek.com/responses", captured["request"].full_url)
         self.assertEqual("test-model", request_body["model"])
         self.assertEqual("json_schema", request_body["text"]["format"]["type"])
-        self.assertTrue(request_body["text"]["format"]["strict"])
+        self.assertEqual("none", request_body["reasoning"]["effort"])
         self.assertEqual("中文摘要", result[paper.arxiv_id]["abstract_zh"])
 
     def test_cache_is_used_without_api_key(self) -> None:
@@ -75,6 +76,7 @@ class EnrichmentTests(unittest.TestCase):
             cache={(paper.arxiv_id, paper.version): {"abstract_zh": "缓存摘要", "tldr_zh": "缓存总结"}},
         )
         self.assertEqual("cached", stats["status"])
+        self.assertEqual("deepseek", stats["provider"])
         self.assertEqual(1, stats["cached"])
         self.assertEqual("缓存摘要", paper.abstract_zh)
 

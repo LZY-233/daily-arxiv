@@ -16,7 +16,7 @@ from daily_arxiv.pipeline import run_pipeline  # noqa: E402
 
 
 class PipelineTests(unittest.TestCase):
-    @patch.dict("os.environ", {"OPENAI_API_KEY": ""}, clear=False)
+    @patch.dict("os.environ", {"DEEPSEEK_API_KEY": ""}, clear=False)
     def test_pipeline_filters_window_exclusions_and_deduplicates(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             work = Path(temp)

@@ -38,11 +38,11 @@ python scripts/daily.py --lookback-hours 72 --max-results 1000
 如需在本地生成中文摘要，请仅通过环境变量提供 Key：
 
 ```powershell
-$env:OPENAI_API_KEY = "你的 API Key"
+$env:DEEPSEEK_API_KEY = "你的 API Key"
 python scripts/daily.py --lookback-hours 72 --max-results 1000
 ```
 
-默认使用 `gpt-5.4-mini`，只处理 5 篇“必读”和 10 篇“值得浏览”；已生成内容会从月度 JSONL 缓存复用。可用 `OPENAI_MODEL`、`OPENAI_ENRICH_LIMIT` 和 `OPENAI_BATCH_SIZE` 环境变量调整模型、篇数和批量大小。
+默认通过 DeepSeek Responses API 使用 `deepseek-v4-flash`，只处理 5 篇“必读”和 10 篇“值得浏览”；已生成内容会从月度 JSONL 缓存复用。可用 `DEEPSEEK_MODEL`、`DEEPSEEK_ENRICH_LIMIT` 和 `DEEPSEEK_BATCH_SIZE` 环境变量调整模型、篇数和批量大小。
 
 调整主题或权重后，可直接重排本地缓存，无需重复请求 arXiv：
 
@@ -79,11 +79,11 @@ tests/                  单元测试和离线 arXiv 样本
 ## GitHub Actions 中配置 API Key
 
 1. 打开仓库的 `Settings → Secrets and variables → Actions`。
-2. 在 `Secrets` 页签点击 `New repository secret`，名称填写 `OPENAI_API_KEY`，值填写 API Key。
-3. 可选：在 `Variables` 页签添加 `OPENAI_MODEL`；不设置时使用 `gpt-5.4-mini`。
+2. 在 `Secrets` 页签点击 `New repository secret`，名称填写 `DEEPSEEK_API_KEY`，值填写 DeepSeek API Key。
+3. 可选：在 `Variables` 页签添加 `DEEPSEEK_MODEL`；不设置时使用 `deepseek-v4-flash`。
 4. 在 `Actions` 页重新运行 `Daily arXiv radar`，或等待下一次定时任务。
 
-工作流只通过 `secrets.OPENAI_API_KEY` 将 Key 注入单个抓取步骤的环境变量，Key 不进入代码、数据文件或提交记录。若 Secret 不存在，GitHub 会传入空值，程序记录 `skipped_no_key` 后继续发布英文摘要。
+工作流只通过 `secrets.DEEPSEEK_API_KEY` 将 Key 注入单个抓取步骤的环境变量，Key 不进入代码、数据文件或提交记录。若 Secret 不存在，GitHub 会传入空值，程序记录 `skipped_no_key` 后继续发布英文摘要。
 
 ## 当前边界
 

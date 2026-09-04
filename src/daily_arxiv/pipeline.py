@@ -91,10 +91,10 @@ def run_pipeline(
     enrichment_stats = enrich_papers(
         ranked,
         cache=load_enrichment_cache(data_dir),
-        api_key=os.getenv("OPENAI_API_KEY", "").strip(),
-        model=os.getenv("OPENAI_MODEL", "").strip() or DEFAULT_MODEL,
-        limit=_positive_env_int("OPENAI_ENRICH_LIMIT", 15),
-        batch_size=_positive_env_int("OPENAI_BATCH_SIZE", 5),
+        api_key=os.getenv("DEEPSEEK_API_KEY", "").strip(),
+        model=os.getenv("DEEPSEEK_MODEL", "").strip() or DEFAULT_MODEL,
+        limit=_positive_env_int("DEEPSEEK_ENRICH_LIMIT", 15),
+        batch_size=_positive_env_int("DEEPSEEK_BATCH_SIZE", 5),
     )
     stats = {
         "fetched": cached_stats.get("fetched", len(fetched)),

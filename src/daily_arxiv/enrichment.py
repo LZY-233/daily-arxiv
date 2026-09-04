@@ -9,8 +9,8 @@ from typing import Any
 from .arxiv import Paper
 
 
-RESPONSES_URL = "https://api.openai.com/v1/responses"
-DEFAULT_MODEL = "gpt-5.4-mini"
+RESPONSES_URL = "https://api.deepseek.com/responses"
+DEFAULT_MODEL = "deepseek-v4-flash"
 
 
 def _schema() -> dict[str, Any]:
@@ -41,7 +41,7 @@ def _response_text(payload: dict[str, Any]) -> str:
             if content.get("type") == "output_text" and content.get("text"):
                 chunks.append(content["text"])
     if not chunks:
-        raise ValueError("OpenAI response did not contain output text")
+        raise ValueError("DeepSeek response did not contain output text")
     return "".join(chunks)
 
 
@@ -59,7 +59,6 @@ def request_summaries(
     ]
     body = {
         "model": model,
-        "store": False,
         "instructions": (
             "你是基础模型研究论文编辑。严格依据给定英文标题与摘要工作，不补充摘要之外的事实。"
             "abstract_zh 应忠实、完整地翻译英文摘要，保留模型名、数据集名、数值和限定条件；"
@@ -70,10 +69,11 @@ def request_summaries(
             "format": {
                 "type": "json_schema",
                 "name": "daily_arxiv_summaries",
-                "strict": True,
                 "schema": _schema(),
             }
         },
+        "reasoning": {"effort": "none"},
+        "temperature": 0.2,
         "max_output_tokens": 8000,
     }
     request = urllib.request.Request(
@@ -89,7 +89,7 @@ def request_summaries(
     with opener(request, timeout=timeout) as response:
         payload = json.loads(response.read().decode("utf-8"))
     if payload.get("status") not in (None, "completed"):
-        raise ValueError(f"OpenAI response status was {payload.get('status')}")
+        raise ValueError(f"DeepSeek response status was {payload.get('status')}")
     parsed = json.loads(_response_text(payload))
     allowed = {paper.arxiv_id for paper in papers}
     results: dict[str, dict[str, str]] = {}
@@ -127,6 +127,7 @@ def enrich_papers(
     missing = [paper for paper in featured if not (paper.abstract_zh and paper.tldr_zh)]
     stats: dict[str, Any] = {
         "status": "skipped_no_key" if not api_key else "completed",
+        "provider": "deepseek",
         "model": model,
         "eligible": len(featured),
         "cached": cached_count,
