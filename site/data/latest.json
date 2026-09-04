@@ -1,43 +1,43 @@
 {
-  "generated_at": "2026-09-04T07:11:11.655889+00:00",
+  "generated_at": "2026-09-04T08:14:06.792913+00:00",
   "review_scope": "title-and-abstract",
   "stats": {
-    "fetched": 1091,
-    "within_window": 1091,
-    "included": 723,
-    "excluded": 368,
+    "fetched": 1056,
+    "within_window": 1056,
+    "included": 700,
+    "excluded": 356,
     "exclusion_reasons": {
-      "no-topic-match": 276,
-      "medical": 66,
+      "no-topic-match": 267,
+      "medical": 65,
       "recommender-and-ads": 5,
       "medical, narrow-nlp-task": 1,
-      "narrow-nlp-task": 2,
+      "narrow-nlp-task": 1,
       "medical, recommender-and-ads": 1,
       "finance": 5,
       "narrow-vision-task": 3,
       "medical, remote-sensing": 1,
-      "remote-sensing": 8
+      "remote-sensing": 7
     },
     "lookback_hours": 72,
     "queries": {
       "cs.CL": {
-        "returned": 279,
-        "total": 279,
+        "returned": 270,
+        "total": 270,
         "truncated": false
       },
       "cs.AI": {
-        "returned": 444,
-        "total": 444,
+        "returned": 424,
+        "total": 424,
         "truncated": false
       },
       "cs.LG": {
-        "returned": 398,
-        "total": 398,
+        "returned": 387,
+        "total": 387,
         "truncated": false
       },
       "cs.CV": {
-        "returned": 333,
-        "total": 333,
+        "returned": 323,
+        "total": 323,
         "truncated": false
       },
       "stat.ML": {
@@ -48,15 +48,16 @@
     },
     "truncated_categories": [],
     "enrichment": {
-      "status": "skipped_no_key",
-      "model": "gpt-5.4-mini",
+      "status": "completed",
+      "provider": "deepseek",
+      "model": "deepseek-v4-flash",
       "eligible": 15,
       "cached": 0,
-      "generated": 0,
+      "generated": 15,
       "failed_batches": 0,
       "missing_outputs": 0
     },
-    "new_records": 265
+    "new_records": 0
   },
   "papers": [
     {
@@ -87,8 +88,8 @@
       "url": "https://arxiv.org/abs/2609.03880v1",
       "pdf_url": "https://arxiv.org/pdf/2609.03880v1",
       "abstract_en": "We introduce Xiaomi-TabLDM, a tabular large data foundation model for classification and regression via in-context learning, which delivers superior prediction accuracy without requiring task-specific fine-tuning. Pretrained exclusively on synthetic data generated from structural causal models (SCMs), our model enables more flexible context utilization and more efficient capacity scaling. i) A new performance standard. Strong regression performance across benchmarks: Xiaomi-TabLDM ranks 1st on OpenML-CTR23 and 2nd on regression across TALENT, TabArena, and BCCO, demonstrating consistently strong regression performance across four complementary benchmark suites. Favorable performance--efficiency trade-off: Xiaomi-TabLDM combines strong predictive performance with substantially lower computational cost. For example, on TabArena regression, it achieves the second-highest Elo while using 82% less training time and 68% less prediction time than the top-ranked TabFM. ii) Large-scale synthetic pretraining. Xiaomi-TabLDM expands the coverage and diversity of synthetic tabular data used for pretraining. We also adopt a three-stage training strategy together with dual-stream feature grouping, lightweight Attention Residual, and sparse Mixture-of-Experts, enabling Xiaomi-TabLDM to learn richer feature interactions and expert specialization across diverse tabular tasks. iii) Test-time scaling. Xiaomi-TabLDM further extends tabular prediction through test-time compute scaling, where allocating additional computation at inference time consistently improves predictive performance over the base model.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "我们介绍了Xiaomi-TabLDM，一个用于通过上下文学习进行分类和回归的表格大型数据基础模型，它在无需任务特定微调的情况下提供了优越的预测精度。该模型仅在由结构因果模型（SCMs）生成的合成数据上进行预训练，从而实现了更灵活的上下文利用和更高效的能力扩展。i) 新的性能标准。跨基准的强回归性能：Xiaomi-TabLDM在OpenML-CTR23上排名第一，在TALENT、TabArena和BCCO的回归任务中排名第二，展示了在四个互补基准套件中持续强劲的回归性能。良好的性能-效率权衡：Xiaomi-TabLDM结合了强大的预测性能与显著降低的计算成本。例如，在TabArena回归中，它实现了第二高的Elo评分，同时比排名第一的TabFM减少了82%的训练时间和68%的预测时间。ii) 大规模合成预训练。Xiaomi-TabLDM扩展了用于预训练的合成表格数据的覆盖范围和多样性。我们还采用了三阶段训练策略以及双流特征分组、轻量级注意力残差和稀疏专家混合，使Xiaomi-TabLDM能够在多样化的表格任务中学习更丰富的特征交互和专家专业化。iii) 测试时扩展。Xiaomi-TabLDM通过测试时计算扩展进一步扩展了表格预测，在推理时分配额外计算持续提高了基础模型的预测性能。",
+      "tldr_zh": "Xiaomi-TabLDM是一个仅在合成数据上预训练的表格基础模型，通过上下文学习实现分类与回归，在多个基准上取得领先性能，并支持测试时计算扩展以进一步提升精度。",
       "topics": [
         "llm",
         "moe",
@@ -144,8 +145,8 @@
       "url": "https://arxiv.org/abs/2609.01343v1",
       "pdf_url": "https://arxiv.org/pdf/2609.01343v1",
       "abstract_en": "Looped Transformers increase effective depth by iterating a shared block of layers, but most evaluations compare at fixed model size, conflating architectural advantage with extra FLOPs. We study looping on Mixture-of-Experts Transformers while closely matching per-token FLOPs, total non-embedding parameters, and KV cache. Through a series of ablations, we arrive at a recipe we call SMELT (Sparse MoE Transformer, middle layers Loop Twice), which loops the middle half of layers twice while matching the unlooped Baseline on all three budgets. We scale SMELT across four sizes up to 54B non-embedding parameters and fit a separate Chinchilla-style scaling law for each architecture. SMELT's loss drops faster with compute, saving 6.8--18.0\\% of training FLOPs on the compute-optimal frontier. The advantage transfers to downstream benchmarks beyond what validation loss predicts, is largest on Code, and grows with sample length and the number of in-context examples. Mechanistic analysis shows that the second visit reduces the attention sink and redirects mass toward content-relevant tokens, an inductive bias that may underlie the observed performance gains. These results show that looping can improve Transformers even under budget matching, offering a practical recipe that turns depth reuse into measurable gains.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "循环Transformer通过迭代共享层块来增加有效深度，但大多数评估在固定模型大小下进行，混淆了架构优势与额外FLOPs。我们在紧密匹配每token FLOPs、总非嵌入参数和KV缓存的同时，研究了专家混合Transformer上的循环。通过一系列消融实验，我们得出了一种称为SMELT（稀疏MoE Transformer，中间层循环两次）的方案，该方案将中间一半的层循环两次，同时在所有三个预算上匹配非循环基线。我们将SMELT扩展到四种规模，最大达到54B非嵌入参数，并为每种架构拟合了单独的Chinchilla风格缩放定律。SMELT的损失随计算量下降更快，在计算最优前沿上节省了6.8--18.0%的训练FLOPs。这一优势转移到下游基准，超出了验证损失的预测，在代码任务上最大，并随着样本长度和上下文示例数量的增加而增长。机制分析表明，第二次访问减少了注意力汇聚，并将质量重定向到与内容相关的token，这种归纳偏置可能是观察到的性能提升的基础。这些结果表明，即使在预算匹配下，循环也能改进Transformer，提供了一种将深度重用转化为可衡量收益的实用方案。",
+      "tldr_zh": "SMELT通过在匹配FLOPs、参数和KV缓存预算下循环中间层两次，在MoE Transformer上实现了更优的缩放定律，节省了训练计算并提升了下游性能。",
       "topics": [
         "llm",
         "moe",
@@ -201,8 +202,8 @@
       "url": "https://arxiv.org/abs/2609.03493v1",
       "pdf_url": "https://arxiv.org/pdf/2609.03493v1",
       "abstract_en": "Modern vision-language models (VLMs) can directly answer many image-grounded questions, yet they often struggle with complex queries requiring fine-grained visual details or external knowledge. To acquire this missing evidence, agentic VLMs invoke tools such as image cropping, image search, and text search. However, existing training paradigms primarily evaluate tool-use based on final answer correctness, leaving evidence acquisition and utilization insufficiently supervised. This leads to two critical shortcomings: (i) models frequently issue redundant or off-target tool calls that fail to gather necessary evidence, and (ii) even when appropriate tools are called, models often fail to extract the necessary information from the resulting observations. To address these limitations, we introduce the NTEP (Necessary Tool-Evidence Path), a novel annotation scheme that explicitly specifies the essential external evidence and corresponding tool calls for each query. Building upon this, we propose NTEP-R (NTEP Reward), a supervision mechanism ensuring that each tool invocation strictly advances the reasoning process toward the final solution. Specifically, our approach rewards the agent for aligning its pre-call intent with a necessary evidence-seeking goal, and for ensuring the information summarized from the post-call observation aligns with the necessary evidence. Furthermore, we introduce a non-repeated-goal regularizer to penalize redundant calls that revisit satisfied NTEP goals. Extensive evaluations on seven image-grounded benchmarks demonstrate that our 8B-parameter instantiation, NTEP-8B, significantly improves both search-oriented accuracy and tool-use efficiency within a unified three-tool framework. These results highlight the critical value of fine-grained tool-evidence path supervision for training robust agentic VLMs.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "现代视觉语言模型（VLMs）可以直接回答许多基于图像的问题，但它们通常难以处理需要细粒度视觉细节或外部知识的复杂查询。为了获取这些缺失的证据，代理型VLMs调用图像裁剪、图像搜索和文本搜索等工具。然而，现有的训练范式主要基于最终答案的正确性来评估工具使用，导致证据获取和利用的监督不足。这导致了两个关键缺陷：（i）模型经常发出冗余或偏离目标的工具调用，无法收集必要的证据；（ii）即使调用了适当的工具，模型也常常无法从产生的观察中提取必要信息。为了解决这些局限性，我们引入了NTEP（必要工具-证据路径），一种新颖的标注方案，明确指定每个查询所需的基本外部证据和相应的工具调用。在此基础上，我们提出了NTEP-R（NTEP奖励），一种监督机制，确保每次工具调用都严格推进推理过程朝向最终解决方案。具体来说，我们的方法奖励代理在调用前意图与必要证据寻求目标对齐，并确保调用后观察中总结的信息与必要证据一致。此外，我们引入了一个非重复目标正则化器，以惩罚重新访问已满足NTEP目标的冗余调用。在七个基于图像的基准上的广泛评估表明，我们的8B参数实例NTEP-8B在统一的三工具框架内显著提高了搜索导向的准确性和工具使用效率。这些结果凸显了细粒度工具-证据路径监督对于训练鲁棒代理型VLM的关键价值。",
+      "tldr_zh": "NTEP-R通过细粒度的工具-证据路径奖励监督，确保每次工具调用都推进推理，显著提升了代理型VLM在图像基准上的搜索准确性和工具使用效率。",
       "topics": [
         "llm",
         "multimodal",
@@ -251,8 +252,8 @@
       "url": "https://arxiv.org/abs/2609.02986v1",
       "pdf_url": "https://arxiv.org/pdf/2609.02986v1",
       "abstract_en": "Hybrid architectures combining Full Attention (FA) and Linear Attention (LA) are increasingly prominent, yet their allocation remains heuristic. We seek an evidence-grounded basis in head-level functional organization learned by RoPE-based Transformers. Behavioral probes do not yield a complete taxonomy, so we propose two intervention metrics: RoPE Frequency Importance Score (RFIS), measuring how each frequency affects a head's attention distribution, and RoPE Positional Dependence (RPD), isolating dependence on rotary positional modulation. On Qwen3-series models and Llama3.1, RFIS suggests and RPD verifies a complete taxonomy of retrieval and positional heads separated by a salient mid-low-frequency band. Controlled Transformers show that this boundary follows the training-length positional scale; we term it the Global Positional Band (GPBand). The analysis suggests a potential cause of zero-shot length-extrapolation failure and yields two principles: positional modeling should operate only locally, with global access through position-independent retrieval; and both functions should be assigned at head granularity with layer-specific allocation. We instantiate them in Head-wise Hybrid Architecture (HwH), using NoPE FA for global retrieval and LA for local positional modeling. With an FA-to-LA ratio below 1:3, HwH retains strong language modeling and commonsense reasoning while improving retrieval and substantially strengthening zero-shot long-context extrapolation over Transformer, LA, and a layer-wise hybrid baseline. Ablations validate both principles and component roles, highlighting principled hybrid architecture design as a promising route toward future foundation models.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "结合全注意力（FA）和线性注意力（LA）的混合架构日益突出，但其分配仍然是启发式的。我们寻求在RoPE-based Transformer学习的头级功能组织中寻找基于证据的基础。行为探针无法产生完整的分类，因此我们提出了两种干预指标：RoPE频率重要性评分（RFIS），衡量每个频率如何影响头的注意力分布，以及RoPE位置依赖性（RPD），隔离对旋转位置调制的依赖性。在Qwen3系列模型和Llama3.1上，RFIS建议并由RPD验证了一个完整的检索头和位置头分类，由显著的中间低频带分隔。受控Transformer表明，这一边界遵循训练长度的位置尺度；我们将其称为全局位置带（GPBand）。该分析提出了零样本长度外推失败的潜在原因，并产生了两个原则：位置建模应仅在局部操作，通过位置无关的检索实现全局访问；两种功能应以头粒度分配，并具有层特定的分配。我们在头级混合架构（HwH）中实例化了它们，使用NoPE FA进行全局检索，LA进行局部位置建模。在FA与LA比率低于1:3的情况下，HwH保持了强大的语言建模和常识推理能力，同时改善了检索，并显著增强了相对于Transformer、LA和层级混合基线的零样本长上下文外推。消融实验验证了这两个原则和组件角色，强调了原则性混合架构设计作为未来基础模型的有前途的途径。",
+      "tldr_zh": "通过RFIS和RPD指标识别出RoPE Transformer中的检索头和位置头，并据此提出头级混合架构HwH，在低FA比例下增强了长上下文外推能力。",
       "topics": [
         "llm",
         "architecture",
@@ -304,8 +305,8 @@
       "url": "https://arxiv.org/abs/2609.03414v1",
       "pdf_url": "https://arxiv.org/pdf/2609.03414v1",
       "abstract_en": "Audio enhancement in real-world scenarios involves complex distortion couplings and requires personalized enhancement. Existing solutions struggle to address both simultaneously. To improve robustness and enable autonomous operation in such scenarios, we propose StrixAE, an agent based on a multimodal large language model (MLLM). StrixAE leverages the MLLM as a controller to coordinate multiple audio enhancement and personalization models. To further enhance system robustness, reduce artifacts, and improve generalization across diverse real-world scenarios, StrixAE is trained through a two-stage process: first, CoT supervised fine-tuning on AcoustBench to ground basic reasoning and tool invocation; second, Audio Perception Reinforcement Learning (APRL), a reward design specifically tailored for audio restoration pipelines that jointly optimizes format validity, structural coherence, and perceptual quality. Unlike generic RL fine-tuning, APRL introduces structured rewards that enforce executable pipelines and logical section ordering, enabling the agent to produce reliable, interpretable enhancement plans without hallucinated tools. Based on real-world test datasets, our proposed method outperforms most existing open-source and proprietary solutions, achieving state-of-the-art performance across multiple perceptual metrics and demonstrating strong generalization robustness.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "现实场景中的音频增强涉及复杂的失真耦合，并需要个性化增强。现有解决方案难以同时解决这两个问题。为了提高鲁棒性并在此类场景中实现自主操作，我们提出了StrixAE，一个基于多模态大语言模型（MLLM）的代理。StrixAE利用MLLM作为控制器来协调多个音频增强和个性化模型。为了进一步增强系统鲁棒性、减少伪影并提高跨多样现实场景的泛化能力，StrixAE通过两阶段过程进行训练：首先，在AcoustBench上进行CoT监督微调，以建立基本推理和工具调用能力；其次，音频感知强化学习（APRL），一种专门为音频恢复流程设计的奖励机制，联合优化格式有效性、结构连贯性和感知质量。与通用RL微调不同，APRL引入了结构化奖励，强制执行可执行的流程和逻辑部分排序，使代理能够产生可靠、可解释的增强计划，而不会产生幻觉工具。基于真实世界测试数据集，我们提出的方法优于大多数现有的开源和专有解决方案，在多个感知指标上实现了最先进的性能，并展示了强大的泛化鲁棒性。",
+      "tldr_zh": "StrixAE是一个基于多模态大语言模型的音频增强代理，通过两阶段训练（CoT微调和音频感知强化学习）在复杂失真耦合场景中实现了最先进的性能。",
       "topics": [
         "llm",
         "multimodal",
@@ -365,8 +366,8 @@
       "url": "https://arxiv.org/abs/2609.03952v1",
       "pdf_url": "https://arxiv.org/pdf/2609.03952v1",
       "abstract_en": "Camera-conditioned world models generate interactive videos in which commanded actions should induce the expected scene changes while appearance, geometry, and temporal dynamics remain coherent. Existing rewards assess these requirements separately: geometry-based rewards estimate trajectory execution but cannot judge the visual quality of the executed motion, whereas image-based rewards measure frame quality without capturing action execution or temporal dynamics. We posit that a vision-language model (VLM) offers a shared reasoning space for relating actions to their visual outcomes. However, judging a complete long video against its full action sequence creates a lengthy, noisy context in which short-lived local action evidence can be missed or diluted. We present WorldReward, a VLM-based pairwise preference reward model that unifies action-consistency and visual-quality evaluation for camera-conditioned world models. WorldReward decomposes paired videos into action-aligned chunks, organizes each chunk into structured visual evidence, and aggregates chunk-level decisions by voting into separate video-level action and visual-quality preferences. To train it, we construct a large-scale reasoning-augmented preference dataset using structured judgments generated by a frontier VLM and refined through tool-based agent auditing and targeted human review. We further introduce WorldReward-Bench, a human-annotated benchmark measuring reward-model agreement with human preferences across action consistency, appearance quality, and motion quality. WorldReward achieves the highest agreement on all three dimensions, exceeding GPT-5.5 by 3.42, 1.45, and 3.56 percentage points, respectively. When used for RL post-training of HY-WorldPlay 1.5, it consistently improves both action execution and visual quality across short- to long-term horizons.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "相机条件世界模型生成交互式视频，其中指令动作应引发预期的场景变化，同时外观、几何和时间动态保持一致。现有奖励方法分别评估这些要求：基于几何的奖励估计轨迹执行情况，但无法判断所执行运动的视觉质量；而基于图像的奖励衡量帧质量，却不捕捉动作执行或时间动态。我们认为，视觉语言模型（VLM）为关联动作与其视觉结果提供了共享的推理空间。然而，针对完整的长视频及其完整动作序列进行评判，会形成冗长且嘈杂的上下文，其中短暂的局部动作证据可能被遗漏或稀释。我们提出了WorldReward，一种基于VLM的成对偏好奖励模型，统一了相机条件世界模型的动作一致性和视觉质量评估。WorldReward将成对视频分解为动作对齐的片段，将每个片段组织为结构化视觉证据，并通过投票将片段级决策聚合为独立的视频级动作和视觉质量偏好。为了训练该模型，我们使用前沿VLM生成的结构化判断构建了一个大规模推理增强的偏好数据集，并通过基于工具的主体审计和针对性人工审查进行精炼。我们进一步引入了WorldReward-Bench，一个带有人工标注的基准，用于衡量奖励模型在动作一致性、外观质量和运动质量方面与人类偏好的一致性。WorldReward在所有三个维度上均达到最高一致性，分别超过GPT-5.5达3.42、1.45和3.56个百分点。当用于HY-WorldPlay 1.5的强化学习后训练时，它在短期到长期范围内持续改善动作执行和视觉质量。",
+      "tldr_zh": "WorldReward提出了一种基于VLM的成对偏好奖励模型，通过动作对齐分块和投票聚合统一评估相机条件世界模型的动作一致性与视觉质量，并在基准上超越GPT-5.5。",
       "topics": [
         "llm",
         "multimodal",
@@ -420,8 +421,8 @@
       "url": "https://arxiv.org/abs/2609.03085v1",
       "pdf_url": "https://arxiv.org/pdf/2609.03085v1",
       "abstract_en": "There is growing interest in adopting CLIP-style vision--language model (VLM) pretraining for mammography. However, models that directly employ the standard CLIP architecture and training objective exhibit limited zero-shot performance in clinically important tasks such as cancer, finding-type, and BI-RADS predictions. We argue that this underwhelming performance is due to neglecting two characteristics of mammography data: (1) its high-res nature, and (2) homogeneity of radiology reports, largely driven by a predominance of negative/benign findings on examinations. We propose TopKSigLIP, a VLM designed to address these two limitations through a novel architecture and learning objectives. Instead of downscaling high-res mammography images to satisfy GPU memory constraints, TopKSigLIP introduces TopK-Patch module that learns to sample a sparse set of high-res patches likely to contain lesions, sidestepping the resolution--batch size tradeoff of VLM training. The sampled patch locations additionally serve as a built-in localization tool. To address report homogeneity, we replace the contrastive loss, which falsely repels semantically similar pairs, with a Sup-sigmoid loss. Sup-sigmoid loss extends the sigmoid loss from SigLIP with soft labels derived from structured data. TopKSigLIP outperforms existing open-source mammography and general medical VLMs on both internal and external benchmarks on density assessment, BI-RADS classification, finding subtyping, and cancer prediction under zero-shot evaluation. TopKSigLIP remains competitive under linear probing despite using a significantly smaller vision encoder and smaller training batches than baselines. The TopK-Patch module additionally achieves superior lesion localization over post-hoc Grad-CAM. Code and weights are made public:https://github.com/Youngseok0001/TopKSigLIP.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "人们越来越倾向于将CLIP风格的视觉语言模型（VLM）预训练应用于乳腺X线摄影。然而，直接采用标准CLIP架构和训练目标的模型在临床重要任务（如癌症、发现类型和BI-RADS预测）中的零样本性能有限。我们认为，这种不佳表现源于忽略了乳腺X线摄影数据的两个特征：（1）其高分辨率特性，以及（2）放射学报告的同质性，这主要由检查中阴性/良性发现的优势所驱动。我们提出了TopKSigLIP，一种通过新颖架构和学习目标来解决这两个局限性的VLM。TopKSigLIP不是通过缩小高分辨率乳腺X线图像来满足GPU内存限制，而是引入了TopK-Patch模块，该模块学习采样一组可能包含病变的高分辨率补丁，从而绕开VLM训练中的分辨率-批量大小权衡。采样补丁位置还充当内置的定位工具。为了解决报告同质性，我们用Sup-sigmoid损失替代了对比损失（后者错误地排斥语义相似的配对）。Sup-sigmoid损失扩展了SigLIP中的sigmoid损失，使用从结构化数据派生的软标签。TopKSigLIP在内部和外部基准上，在密度评估、BI-RADS分类、发现亚型和癌症预测的零样本评估中，均优于现有的开源乳腺X线摄影和通用医学VLM。尽管TopKSigLIP使用的视觉编码器显著更小且训练批量比基线更小，但在线性探测下仍保持竞争力。TopK-Patch模块在病变定位方面也优于事后Grad-CAM。代码和权重已公开：https://github.com/Youngseok0001/TopKSigLIP。",
+      "tldr_zh": "TopKSigLIP通过TopK-Patch模块学习采样高分辨率病变补丁，并采用Sup-sigmoid损失处理报告同质性，从而在乳腺X线摄影零样本任务上超越现有VLM。",
       "topics": [
         "llm",
         "multimodal",
@@ -477,8 +478,8 @@
       "url": "https://arxiv.org/abs/2609.03391v1",
       "pdf_url": "https://arxiv.org/pdf/2609.03391v1",
       "abstract_en": "Contrastive language-image learning (CLIP) has become a key paradigm for remote sensing vision-language understanding. However, existing remote sensing contrastive learning methods are mostly built on RGB-oriented CLIP architectures, making it difficult to exploit heterogeneous sensors such as SAR, multi-spectral imaging (MSI), and hyperspectral imaging (HSI). To address this limitation, we propose OmniRSCLIP, an end-to-end contrastive learning framework that supports multi-source sensor inputs for remote sensing vision-language modeling. The key idea is to extend CLIP beyond its fixed RGB input interface without breaking the pretrained visual knowledge. To this end, OmniRSCLIP introduces Spectral-Spatial Basis Decomposition (SSBD), which formulates arbitrary-channel adaptation as a basis recomposition problem: pretrained CLIP patch embeddings provide transferable spatial bases, while wavelength-conditioned coefficients span sensor-specific embedding kernels within a constrained visual prior space. This design avoids forcing heterogeneous sensors into a fixed-channel input space, while aligning them in a unified image-text semantic space. We further introduce a spectral-context-aware mask-based contrastive learning scheme to suppress modality-specific redundant features and enhance fine-grained image-text alignment. Finally, to support multi-modal training, we construct OmniRS5M, the first large-scale remote sensing image-text corpus covering RGB, SAR, MSI, and HSI. Experiments on retrieval, zero-shot classification, and semantic localization show that OmniRSCLIP preserves strong RGB-domain performance while effectively extending CLIP to heterogeneous remote sensing modalities.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "对比语言-图像学习（CLIP）已成为遥感视觉语言理解的关键范式。然而，现有的遥感对比学习方法大多基于面向RGB的CLIP架构，难以利用异构传感器，如SAR、多光谱成像（MSI）和高光谱成像（HSI）。为解决这一局限，我们提出了OmniRSCLIP，一种支持多源传感器输入的端到端对比学习框架，用于遥感视觉语言建模。关键思想是在不破坏预训练视觉知识的情况下，将CLIP扩展到其固定RGB输入接口之外。为此，OmniRSCLIP引入了光谱-空间基分解（SSBD），将任意通道适应表述为一个基重组问题：预训练的CLIP补丁嵌入提供可迁移的空间基，而波长条件系数在受限的视觉先验空间内生成特定于传感器的嵌入核。这种设计避免了将异构传感器强制纳入固定通道输入空间，同时将它们对齐到统一的图像-文本语义空间。我们进一步引入了一种光谱上下文感知的掩码对比学习方案，以抑制模态特定的冗余特征并增强细粒度的图像-文本对齐。最后，为支持多模态训练，我们构建了OmniRS5M，这是第一个覆盖RGB、SAR、MSI和HSI的大规模遥感图像-文本语料库。在检索、零样本分类和语义定位上的实验表明，OmniRSCLIP在保持强RGB域性能的同时，有效地将CLIP扩展到异构遥感模态。",
+      "tldr_zh": "OmniRSCLIP通过光谱-空间基分解将CLIP扩展到多源遥感数据（SAR、MSI、HSI），并利用OmniRS5M语料库训练，在保持RGB性能的同时有效支持异构模态。",
       "topics": [
         "llm",
         "multimodal",
@@ -525,8 +526,8 @@
       "url": "https://arxiv.org/abs/2609.04200v1",
       "pdf_url": "https://arxiv.org/pdf/2609.04200v1",
       "abstract_en": "Evaluating physical reasoning in video models is difficult because absolute motion measurements depend on frame rate, object scale, and camera calibration, all of which are often ambiguous or unavailable in generated video. We propose a different approach. When two objects in the same scene obey the same physical law, their motions must satisfy predictable relationships, and these relationships hold independent of calibration. We introduce Principia, a benchmark that evaluates Newtonian physics through relational consistency between paired objects. Principia spans eight phenomena - gravity, restitution, friction, rotational inertia, projectile motion, momentum, pendulum, and mass-spring oscillation - across translational, rotational, collisional, and oscillatory dynamics, using real-world scenes recorded under controlled protocols. We also introduce a calibration-independent consistency score that quantifies physical violation directly in image space. Across thousands of generations from six state-of-the-art video generators, no model exceeds 0.42 on Principia despite all scoring around 0.8 on VBench. Vision-language models are evaluated on their ability to detect relational physics violations, with the best model achieving only 67% accuracy and most performing near chance level.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "评估视频模型中的物理推理是困难的，因为绝对运动测量取决于帧率、物体尺度和相机标定，而这些在生成视频中通常不明确或不可用。我们提出了一种不同的方法。当同一场景中的两个物体遵循相同的物理定律时，它们的运动必须满足可预测的关系，并且这些关系与标定无关。我们引入了Principia，一个通过配对物体之间的关系一致性来评估牛顿物理的基准。Principia涵盖八种现象——重力、恢复系数、摩擦、转动惯量、抛体运动、动量、摆和质量-弹簧振荡——涵盖平移、旋转、碰撞和振荡动力学，使用在受控协议下记录的真实场景。我们还引入了一个与标定无关的一致性分数，直接在图像空间中量化物理违背。在来自六个最先进视频生成器的数千次生成中，尽管所有模型在VBench上得分约为0.8，但没有模型在Principia上超过0.42。视觉语言模型在检测关系物理违背方面的能力也被评估，最佳模型仅达到67%的准确率，大多数接近随机水平。",
+      "tldr_zh": "Principia通过配对物体的关系一致性评估视频模型的牛顿物理推理，发现现有视频生成器得分低（最高0.42），而VLM检测违背的准确率也有限。",
       "topics": [
         "llm",
         "multimodal",
@@ -575,8 +576,8 @@
       "url": "https://arxiv.org/abs/2609.02565v1",
       "pdf_url": "https://arxiv.org/pdf/2609.02565v1",
       "abstract_en": "Text-video retrieval requires representations that can distinguish videos with similar scenes, actions, and temporal patterns. Recent multimodal large language models have been adapted as embedding models, but they often represent each input using a single token from the final layer. This can compress diverse video-text cues into a single vector and limit fine-grained retrieval. To address this limitation, we propose MARS, a multi-layer and multi-slot embedding framework for text-video retrieval. MARS constructs multiple adaptive representation slots by combining hidden states from different decoder layers, compares corresponding text and video slots, and aggregates their similarities for retrieval. To better handle confusing candidates, we further introduce a hard-negative-aware slot specialization objective that encourages the slots to capture discriminative matching cues. Experiments on four text-video retrieval benchmarks show that MARS achieves state-of-the-art results in both direct similarity-based retrieval and reranking settings. Ablation studies and analyses demonstrate that multi-layer fusion, multiple slots, and hard-negative-aware slot specialization provide complementary gains. Code is available at https://github.com/sejong-rcv/MARS.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "文本-视频检索需要能够区分具有相似场景、动作和时间模式的视频的表示。最近的多模态大语言模型已被改编为嵌入模型，但它们通常使用最终层的单个标记来表示每个输入。这可能会将多样的视频-文本线索压缩到一个向量中，并限制细粒度检索。为解决这一局限，我们提出了MARS，一种用于文本-视频检索的多层多槽嵌入框架。MARS通过组合不同解码器层的隐藏状态来构建多个自适应表示槽，比较对应的文本和视频槽，并聚合它们的相似度进行检索。为了更好地处理混淆候选，我们进一步引入了一种难负样本感知的槽专门化目标，鼓励槽捕获判别性匹配线索。在四个文本-视频检索基准上的实验表明，MARS在直接基于相似度的检索和重排序设置中均达到了最先进的结果。消融研究和分析表明，多层融合、多槽和难负样本感知的槽专门化提供了互补的增益。代码可在 https://github.com/sejong-rcv/MARS 获取。",
+      "tldr_zh": "MARS提出多层多槽嵌入框架，结合难负样本感知的槽专门化目标，在文本-视频检索基准上取得最先进性能。",
       "topics": [
         "llm",
         "multimodal",
@@ -629,8 +630,8 @@
       "url": "https://arxiv.org/abs/2609.04070v1",
       "pdf_url": "https://arxiv.org/pdf/2609.04070v1",
       "abstract_en": "Bridging the gap between the discrete reasoning of Vision-Language Models and the continuous, physics-constrained nature of autonomous driving remains a significant challenge. In this work, we introduce LaPla, a unified Vision-Language-Action (VLA) framework featuring latent-aligned planning to seamlessly ground semantic understanding in precise motion execution. We first design an action tokenizer based on a residual vector-quantized variational autoencoder (VQ-VAE), capturing vehicle kinematics and encoding trajectory features into a structured latent space. Rather than discrete codebook lookups that inevitably introduce quantization errors, LaPla repurposes this representation as a physical prior to bridge the modality gap between high-dimensional semantics and the raw action space. Specifically, given multimodal inputs integrating multi-view images, historical actions, and textual instructions, LaPla incorporates concurrent action queries to causally attend to the multimodal context in a single forward pass, projecting hidden states directly into the pretrained VQ-VAE latent space. The frozen decoder then translates these continuous latents into actions, effectively eliminating quantization errors and ensuring physically plausible trajectories while bypassing time-consuming autoregressive generation. Extensive experiments on the nuScenes benchmark demonstrate that LaPla achieves competitive open-loop performance, reducing long-horizon L2 error by 15.52% compared to state-of-the-art VLA methods. Closed-loop evaluations on the NVIDIA AlpaSim simulator further confirm its superior capability in ensuring smooth driving progress, improving the success rate by 33.34 percentage points with significantly reduced inference latency.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "弥合视觉语言模型的离散推理与自动驾驶的连续、物理约束性质之间的差距仍然是一个重大挑战。在这项工作中，我们引入了LaPla，一个统一的视觉-语言-动作（VLA）框架，具有潜在对齐规划，可将语义理解无缝地锚定到精确的运动执行中。我们首先设计了一个基于残差向量量化变分自编码器（VQ-VAE）的动作分词器，捕获车辆运动学并将轨迹特征编码到结构化潜在空间中。与不可避免地引入量化误差的离散码本查找不同，LaPla将此表示重新用作物理先验，以弥合高维语义与原始动作空间之间的模态差距。具体来说，给定整合多视图图像、历史动作和文本指令的多模态输入，LaPla在单次前向传播中结合并发动作查询以因果地关注多模态上下文，将隐藏状态直接投影到预训练的VQ-VAE潜在空间中。然后，冻结的解码器将这些连续潜在变量转换为动作，有效消除量化误差并确保物理上合理的轨迹，同时绕过耗时的自回归生成。在nuScenes基准上的大量实验表明，LaPla实现了具有竞争力的开环性能，与最先进的VLA方法相比，将长时L2误差降低了15.52%。在NVIDIA AlpaSim模拟器上的闭环评估进一步证实了其在确保平滑驾驶进度方面的卓越能力，成功率提高了33.34个百分点，同时显著降低了推理延迟。",
+      "tldr_zh": "LaPla通过将动作表示映射到预训练的VQ-VAE潜在空间并利用冻结解码器生成连续动作，消除了量化误差，在nuScenes和AlpaSim上分别降低了L2误差并提升了闭环成功率。",
       "topics": [
         "llm",
         "multimodal",
@@ -677,8 +678,8 @@
       "url": "https://arxiv.org/abs/2609.01428v1",
       "pdf_url": "https://arxiv.org/pdf/2609.01428v1",
       "abstract_en": "Large Language Model (LLM) agents based on the ReAct paradigm have demonstrated remarkable capabilities in tool use and task execution. However, ReAct suffers from a fundamental efficiency problem: every query triggers a complete reasoning loop from scratch, and similar queries repeat identical steps without leveraging historical experience. We propose TRIAGE,a three-level routing framework that reduces token consumption by reusing historical execution trajectories. Its core innovation is TaaS (Trajectory-as-a-Skill), which abstracts historical execution trajectories into reusable skills, realizing 'experience as a service'. TRIAGE classifies queries into three levels: (1) Direct Reuse-identical queries, 0 tokens; (2) Skill Substitution-similar queries, 0 tokens via deterministic parameter substitution; (3) Full ReAct-novel queries, automatically stored for future reuse. In large-scale experiments on 1,007 security monitoring queries, TRIAGE achieves 62.3% token savings, with 56.0% of queries at Level 2 and 5.5% at Level 1, both executing at zero cost. Cross-domain validation on ToolBench (15 domains, 345 queries) achieves 76.3% token reduction, confirming the generalizability of semantic routing. An online learning experiment demonstrates cold-start-to-mature evolution: the L2 hit rate rises from 0% to 57% within the first 100 queries, and the average token cost drops from 198 to 74.7. We also propose an automatic Skill extraction mechanism that distills high-frequency trajectory patterns into deterministic Skills, creating a positive feedback loop of 'the more you use it, the more efficient it becomes'.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "基于ReAct范式的大型语言模型（LLM）代理在工具使用和任务执行方面表现出显著能力。然而，ReAct存在一个根本性的效率问题：每个查询都会从头触发完整的推理循环，相似的查询会重复相同的步骤而不利用历史经验。我们提出了TRIAGE，一个三级路由框架，通过重用历史执行轨迹来减少令牌消耗。其核心创新是TaaS（轨迹即技能），它将历史执行轨迹抽象为可重用技能，实现“经验即服务”。TRIAGE将查询分为三个级别：（1）直接重用——相同查询，0个令牌；（2）技能替换——相似查询，通过确定性参数替换实现0个令牌；（3）完整ReAct——新查询，自动存储以供将来重用。在1,007个安全监控查询的大规模实验中，TRIAGE实现了62.3%的令牌节省，其中56.0%的查询处于级别2，5.5%处于级别1，两者均以零成本执行。在ToolBench（15个领域，345个查询）上的跨域验证实现了76.3%的令牌减少，确认了语义路由的泛化性。在线学习实验展示了从冷启动到成熟的演变：L2命中率在前100个查询内从0%上升到57%，平均令牌成本从198降至74.7。我们还提出了一种自动技能提取机制，将高频轨迹模式提炼为确定性技能，形成“越用越高效”的正反馈循环。",
+      "tldr_zh": "TRIAGE通过三级路由和轨迹重用（TaaS）实现零成本查询处理，在安全监控和ToolBench上分别节省62.3%和76.3%的令牌，并展示了在线学习中的效率提升。",
       "topics": [
         "llm",
         "agent",
@@ -730,8 +731,8 @@
       "url": "https://arxiv.org/abs/2609.01004v1",
       "pdf_url": "https://arxiv.org/pdf/2609.01004v1",
       "abstract_en": "Despite their strong multimodal understanding ability, multimodal large language models (MLLMs) incur substantial computational overhead when processing long visual token sequences. To reduce inference costs, recent studies have explored visual token pruning through vision-centric or text-guided strategies. However, these methods often overlook high-norm outlier tokens, i.e., tokens with abnormally large feature norms, leading to suboptimal pruning decisions. In this work, we show that such high-norm outlier tokens are highly redundant in both feature and spatial dimensions, yet are often mistakenly preserved as informative cues by existing methods. Motivated by this observation, we propose SinkPruner, a training-free visual token pruning framework for efficient MLLM inference. SinkPruner follows a coarse-to-fine design with two key modules: a visual sanitizer that filters high-norm redundancies and alleviates attention sink and attention dispersion, and a text-guided pruner that further retains tokens semantically aligned with the text query. Extensive experiments on twelve image-language and four video-language benchmarks demonstrate the effectiveness, efficiency, and generalizability of our framework. Notably, SinkPruner preserves 96.5% (91.8%) of the original performance of LLaVA-1.5 (Qwen2.5-VL) under an 89% token reduction. Experiments further indicate that our visual sanitizer exhibits promising transferability in enhancing the performance of existing pruning methods. Our code is available at https://github.com/LaVi-Lab/SinkPruner.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "尽管多模态大语言模型（MLLMs）具有强大的多模态理解能力，但在处理长视觉令牌序列时会产生大量计算开销。为了降低推理成本，最近的研究探索了通过视觉中心或文本引导策略进行视觉令牌剪枝。然而，这些方法常常忽略高范数异常令牌，即具有异常大特征范数的令牌，导致剪枝决策次优。在这项工作中，我们表明这类高范数异常令牌在特征和空间维度上高度冗余，但常被现有方法错误地保留为信息线索。基于这一观察，我们提出了SinkPruner，一个无需训练的视觉令牌剪枝框架，用于高效的MLLM推理。SinkPruner遵循从粗到细的设计，包含两个关键模块：一个视觉清理器，过滤高范数冗余并缓解注意力汇聚和注意力分散；以及一个文本引导剪枝器，进一步保留与文本查询语义对齐的令牌。在十二个图像-语言和四个视频-语言基准上的大量实验证明了我们框架的有效性、效率和泛化性。值得注意的是，SinkPruner在89%的令牌减少下保留了LLaVA-1.5（Qwen2.5-VL）原始性能的96.5%（91.8%）。实验进一步表明，我们的视觉清理器在增强现有剪枝方法性能方面表现出良好的可迁移性。我们的代码可在https://github.com/LaVi-Lab/SinkPruner获取。",
+      "tldr_zh": "SinkPruner通过视觉清理器过滤高范数冗余令牌并缓解注意力汇聚，结合文本引导剪枝，在89%令牌减少下保留LLaVA-1.5和Qwen2.5-VL约96.5%和91.8%的性能。",
       "topics": [
         "llm",
         "multimodal",
@@ -779,8 +780,8 @@
       "url": "https://arxiv.org/abs/2609.00948v1",
       "pdf_url": "https://arxiv.org/pdf/2609.00948v1",
       "abstract_en": "Vision-language models (VLMs) have demonstrated strong performance in visual question answering with natural images. However, they continue to struggle with scientific diagrams, which are designed to convey functional or relational meaning rather than literal scenes. We therefore introduce a framework for generating large-scale diagram-grounded instruction data by leveraging terminology derived from scientific curricula. Our approach systematically extracts domain concepts, synthesizes atomic facts, retrieves relevant diagrams from the web, and generates multimodal supervision in the form of diagram captions and multiple-choice questions. Using this pipeline, we construct SciGram, a dataset of over 194K diagrams and 1.4M visual instructions across life, earth, and physical sciences. Despite relying on noisy web data and synthetic annotations, models fine-tuned on SciGram achieve substantial improvements on diagram-centric benchmarks, including TQA, ScienceQA, and AI2D, outperforming or matching state-of-the-art VLMs while using fewer training instances. Furthermore, augmenting existing models such as LLaVA OneVision with SciGram establishes new state-of-the-art performance on diagram question answering. Our results highlight the effectiveness of terminology-grounded instruction generation as a general strategy for improving vision-language reasoning in scientific domains. To support future research in scientific diagram understanding, we release both the SciGram dataset and models.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "视觉语言模型（VLMs）在自然图像的视觉问答中表现出强大性能。然而，它们仍然难以理解科学图表，这些图表旨在传达功能或关系意义而非字面场景。因此，我们引入了一个框架，通过利用源自科学课程的术语来生成大规模图表基础的指令数据。我们的方法系统地提取领域概念，合成原子事实，从网络检索相关图表，并生成图表标题和多项选择题形式的多模态监督。使用此流程，我们构建了SciGram，一个包含超过194K图表和1.4M视觉指令的数据集，涵盖生命科学、地球科学和物理科学。尽管依赖嘈杂的网络数据和合成注释，在SciGram上微调的模型在图表中心基准（包括TQA、ScienceQA和AI2D）上取得了显著改进，在减少训练实例的情况下优于或匹配最先进的VLMs。此外，用SciGram增强现有模型（如LLaVA OneVision）在图表问答上建立了新的最先进性能。我们的结果强调了术语基础指令生成作为提高科学领域视觉语言推理的通用策略的有效性。为了支持科学图表理解的未来研究，我们发布了SciGram数据集和模型。",
+      "tldr_zh": "通过术语驱动的指令生成构建SciGram数据集（194K图表、1.4M指令），微调模型在TQA、ScienceQA和AI2D上取得显著提升，并增强了LLaVA OneVision的性能。",
       "topics": [
         "llm",
         "multimodal",
@@ -831,8 +832,8 @@
       "url": "https://arxiv.org/abs/2609.03818v1",
       "pdf_url": "https://arxiv.org/pdf/2609.03818v1",
       "abstract_en": "Collaborative perception enhances environment understanding through multi-agent information sharing, but its performance in real-world scenarios is constrained by heterogeneous sensor modalities and model architectures. Recent protocol-based two-stage methods alleviate this problem by mapping heterogeneous features into a shared protocol space; however, independently trained modality-specific converters often generate modality-specific pseudo-protocol distributions, leading to semantic inconsistency and error accumulation, which is particularly pronounced in scenarios with large modality discrepancies. To address this issue, we propose CauseCollab, a causal unified and modality-agnostic network. CauseCollab formulates representation learning in the protocol space from a causal perspective, explicitly disentangling semantic factors from modality-specific statistical confounders via causal metric learning. Meanwhile, CauseCollab adopts context-guided Unified Converter for heterogeneous modalities to ensure cross-modal semantic consistency. In addition, integrating new modalities only requires training adapters with minimal parameters. Extensive experiments on the OPV2V and DAIR-V2X datasets demonstrate that CauseCollab achieves state-of-the-art performance, with more significant gains in scenarios involving large modality gaps.",
-      "abstract_zh": null,
-      "tldr_zh": null,
+      "abstract_zh": "协作感知通过多智能体信息共享增强环境理解，但其在现实场景中的性能受到异构传感器模态和模型架构的限制。最近的基于协议的两阶段方法通过将异构特征映射到共享协议空间来缓解此问题；然而，独立训练的模态特定转换器通常生成模态特定的伪协议分布，导致语义不一致和错误累积，这在模态差异较大的场景中尤为明显。为解决此问题，我们提出了CauseCollab，一个因果统一且模态无关的网络。CauseCollab从因果角度制定协议空间中的表示学习，通过因果度量学习显式地将语义因素与模态特定的统计混杂因素分离。同时，CauseCollab采用上下文引导的统一转换器处理异构模态，以确保跨模态语义一致性。此外，集成新模态仅需训练具有最少参数的适配器。在OPV2V和DAIR-V2X数据集上的大量实验表明，CauseCollab实现了最先进的性能，在涉及大模态差距的场景中取得了更显著的增益。",
+      "tldr_zh": "CauseCollab通过因果度量学习解耦语义与模态混杂因素，并采用上下文引导的统一转换器，在OPV2V和DAIR-V2X上实现最先进性能，尤其在模态差异大时增益显著。",
       "topics": [
         "agent",
         "architecture"
@@ -3958,61 +3959,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2609.00830",
-      "version": 1,
-      "title": "Visual Attention Faithfulness in Vision-Language Models is Heterogeneous",
-      "authors": [
-        "Xurui Song",
-        "Weishi Wang",
-        "Zhongqi Yue",
-        "Kuluhan Binici",
-        "Tao Bai",
-        "Hongxin Shao",
-        "Daniel Dahlmeier",
-        "Jun Luo"
-      ],
-      "published_at": "2026-09-01T07:32:01+00:00",
-      "updated_at": "2026-09-01T07:32:01+00:00",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "url": "https://arxiv.org/abs/2609.00830v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00830v1",
-      "abstract_en": "Whether attention weights faithfully reflect model reasoning has been actively debated in NLP, yet this question remains largely unexplored for the visual modality in Vision-Language Models (VLMs). We address this gap through causal perturbation analysis on current VLMs, evaluating both the comprehensiveness and sufficiency gap of attention-ranked visual tokens. Our analysis reveals that visual attention faithfulness is heterogeneous, manifesting in three distinct processing modes: Faithful-Sufficient, where top-$k$ attention tokens are both necessary and sufficient for prediction; Faithful-Distributed, where they are necessary but broader visual context remains required; and Non-Focal, where no localized attention region is individually necessary while visual information remains an essential trigger for prediction. Furthermore, human-annotated ground-truth regions satisfy comprehensiveness in only $\\sim 60$% of cases compared with model attention rankings, revealing systematic divergence between model visual reliance and human intuition. We demonstrate these patterns across both general VQA on VQAv2 and document tasks on VRDU and ChartQA, showing that visual attention faithfulness varies systematically with processing demands and model architectures rather than being uniformly faithful or unfaithful.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "llm",
-        "multimodal",
-        "architecture",
-        "reasoning",
-        "evaluation"
-      ],
-      "relevance_score": 55.5,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 14.0,
-      "overall_score": 41.5,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 LLM：language model",
-        "匹配 MLLM / VLM：vision-language model, vlm",
-        "匹配 模型架构：model architecture",
-        "匹配 推理：reasoning",
-        "匹配 评测：evaluating",
-        "偏好降权 hallucination-or-faithfulness：faithfulness"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.03729",
       "version": 1,
       "title": "Unfold The World: Factorize 4D Properties in Reinforcing Spatial Reasoning",
@@ -4312,57 +4258,6 @@
       ],
       "evidence": [
         "明确的方法贡献：we propose"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00873",
-      "version": 1,
-      "title": "Membership Inference in Fine-tuned Diffusion Language Models via Token-level Memorization Asymmetry",
-      "authors": [
-        "Shengfang Zhai",
-        "Leo Marchyok",
-        "Yuling Shi",
-        "Huanran Chen",
-        "Yinpeng Dong",
-        "Jiaheng Zhang",
-        "Sanghyun Hong"
-      ],
-      "published_at": "2026-09-01T08:07:21+00:00",
-      "updated_at": "2026-09-01T08:07:21+00:00",
-      "categories": [
-        "cs.CL",
-        "cs.CR"
-      ],
-      "primary_category": "cs.CL",
-      "url": "https://arxiv.org/abs/2609.00873v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00873v1",
-      "abstract_en": "Diffusion language models (DLMs) have recently emerged as an alternative modeling paradigm to autoregressive LMs, offering advantages such as parallel generation and bidirectional context modeling. Despite growing interest in their generative capabilities, the privacy risks of DLMs remain underexplored. We identify a phenomenon termed token-level memorization asymmetry through theoretical analysis of diffusion training dynamics. Building on this finding, we propose Q-Skew, a quantile-weighted skewness-based indicator for membership inference on finetuned DLMs. Experiments across multiple fine-tuning datasets and models show that our method outperforms existing baselines. Moreover, we show that Q-Skew can also facilitate other privacy violations, such as PII extraction. Our findings reveal a previously underexplored privacy attack surface and highlight the need for systematic privacy evaluation of DLMs.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "llm",
-        "evaluation"
-      ],
-      "relevance_score": 15.0,
-      "evidence_score": 22.0,
-      "preference_boost": 4.0,
-      "preference_penalty": 0.0,
-      "overall_score": 41.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "medium",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 LLM：language model",
-        "匹配 评测：evaluation",
-        "偏好加分 training-mechanism：training dynamics"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose",
-        "实验或理论证据信号：theoretical analysis"
       ],
       "limitations": [
         "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
@@ -4994,102 +4889,6 @@
         "匹配 预训练 / 后训练：post-training",
         "匹配 效率：quantization",
         "匹配 评测：evaluation"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00868",
-      "version": 1,
-      "title": "The Visual Insensitivity Gap: Diagnosing When Vision-Language Models Fail to Use Visual Evidence",
-      "authors": [
-        "Genpei Zhang"
-      ],
-      "published_at": "2026-09-01T08:01:57+00:00",
-      "updated_at": "2026-09-01T08:01:57+00:00",
-      "categories": [
-        "cs.CV",
-        "cs.CL",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "url": "https://arxiv.org/abs/2609.00868v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00868v1",
-      "abstract_en": "Vision-language models are evaluated by aggregate accuracy on multimodal benchmarks, a practice that implicitly assumes the model uses its visual input. We show this assumption fails on 40%--97% of samples across six VLMs and three perceptual benchmarks: blurring the question-relevant visual region leaves the next-token distribution nearly unchanged. We name this phenomenon the Visual Insensitivity Gap and quantify it with a per-sample Visual Sensitivity Index (VSI). The gap is a property of samples, not of models: VSI ranks correlate across models (grand-mean Spearman rho=+0.40, permutation p<10^-3), so the same samples are flagged insensitive by VLMs sharing no architectural detail beyond a contrastively pretrained vision tower. The mechanism is concrete: on the insensitive samples, a linear probe on each model's own vision tower distinguishes perturbed from clean images at 0.72--0.79 accuracy, yet the model's argmax token changes on only 2%--11% of the same samples, an encoder--LLM gap above 0.65 on every model. Mapping VSI's diagnostic utility cell by cell surfaces a strong regime (multi-choice reasoning on capable VLMs: AUROC=0.85--0.87) and a weak regime (well-calibrated factuality, where softmax confidence already leads). VSI is not a universal best abstention signal; it is a sample-intrinsic indicator of vision-ignoring failure, best used as a conditional ensemble component.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "llm",
-        "multimodal",
-        "reasoning",
-        "evaluation"
-      ],
-      "relevance_score": 39.5,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 39.5,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 LLM：language model",
-        "匹配 MLLM / VLM：vision-language model, vlm",
-        "匹配 推理：reasoning",
-        "匹配 评测：benchmark"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00845",
-      "version": 1,
-      "title": "Towards Generalizable Visually Grounded Exploration of Household Devices",
-      "authors": [
-        "Linhao Zheng",
-        "Zeming Liu",
-        "Wangke Chen",
-        "Li Zeng",
-        "Wanxiang Che",
-        "Heyan Huang",
-        "Yuhang Guo"
-      ],
-      "published_at": "2026-09-01T07:42:45+00:00",
-      "updated_at": "2026-09-01T07:42:45+00:00",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.00845v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00845v1",
-      "abstract_en": "Recent advancements in Vision-Language Models (VLMs) have demonstrated impressive capabilities in static visual recognition and high-level semantic reasoning. However, current embodied exploration paradigms still heavily rely on imitation learning from human-annotated trajectories, which severely limits agents' generalization ability. The key bottleneck of realizing general autonomous embodied agents lies in Generalizable Visually Grounded Exploration: the ability to operate novel devices without manuals or specific training by actively grounding abstract world knowledge into fine-grained visual affordances. Yet, existing benchmarks fail to evaluate this capability: they generally rely on explicit documents and annotated trajectories, neglecting the dynamic Hypothesis-Interaction-Refinement process essential for functional device operation. To bridge this gap, we introduce VGEBench, a comprehensive benchmark designed to evaluate the generalizable visually grounded exploration capabilities of VLMs. Unlike static datasets, we construct a Logic-Driven State Machine framework. This framework simulates multi-turn interaction loops, compelling agents to achieve goals by active visual perception and feedback-driven correction. Experimental results demonstrate that existing VLMs face significant challenges in translating semantic knowledge into physical execution and maintaining long-horizon state tracking.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "llm",
-        "multimodal",
-        "reasoning",
-        "evaluation"
-      ],
-      "relevance_score": 39.5,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 39.5,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 LLM：language model",
-        "匹配 MLLM / VLM：vision-language model, vlm",
-        "匹配 推理：reasoning",
-        "匹配 评测：benchmark"
       ],
       "evidence": [],
       "limitations": [
@@ -6309,54 +6108,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2609.00813",
-      "version": 1,
-      "title": "One Policy, Any Budget: Internalizing Budget-Aware Search via Reinforcement Learning",
-      "authors": [
-        "Xiaowei Sun",
-        "Jin Li",
-        "Yili Hong",
-        "Yikun Fu",
-        "Yanghua Xiao"
-      ],
-      "published_at": "2026-09-01T07:12:32+00:00",
-      "updated_at": "2026-09-01T07:12:32+00:00",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.00813v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00813v1",
-      "abstract_en": "While reinforcement learning has enabled LLM-based search agents to invoke external tools, existing methods train under fixed budgets and cannot adapt when constraints vary at deployment. We propose AnySearch, a framework that enables a single policy to perform budget-aware search under any budget constraint through a training scaffold and curriculum reinforcement learning. In the first phase, we train the agent with explicit budget state injection and structured reasoning prompts that guide efficient allocation under linearly decaying budgets. In the second phase, the scaffold is removed and the agent learns to operate autonomously under adaptively sampled budget constraints, matching inference conditions. Both phases are optimized with a composite reward that couples answer accuracy with budget efficiency through absolute and relative signals, where an adaptive weight amplifies the efficiency signal for high-accuracy queries and attenuates it for low-accuracy ones. Extensive experiments on seven general and multi-hop QA benchmarks show that our method outperforms baselines across all budget scales, generalizes to unseen constraints beyond the training range, and achieves superior tool productivity without excessive token overhead. Our code is available at https://github.com/xwsun01/AnySearch.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "reasoning",
-        "evaluation"
-      ],
-      "relevance_score": 9.0,
-      "evidence_score": 28.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 37.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "medium",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 推理：reasoning",
-        "匹配 评测：benchmark"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose",
-        "实验或理论证据信号：extensive experiment",
-        "开放资源信号：code is available"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.03483",
       "version": 1,
       "title": "Air-Ground Collaborative Vision-and-Language Navigation via Shared Bird's-Eye Maps",
@@ -7357,53 +7108,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2609.00859",
-      "version": 1,
-      "title": "Reinforcement Learning Enhanced LLM Agents for Complex Vehicle Routing Problems",
-      "authors": [
-        "Yi Chen",
-        "Zikang Yu",
-        "Jiahai Wang",
-        "Jinbiao Chen",
-        "Jianpeng Zhou",
-        "Zizhen Zhang"
-      ],
-      "published_at": "2026-09-01T07:56:15+00:00",
-      "updated_at": "2026-09-01T07:56:15+00:00",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.00859v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00859v1",
-      "abstract_en": "Vehicle Routing Problems (VRPs) are fundamental combinatorial optimization problems with widespread applications in various scenarios. The advanced optimization solvers can effectively solve such problems. However, modeling complex VRP variants for solvers often requires substantial domain expertise, which limits the accessibility of advanced optimization technologies. In this paper, we propose Reinforcement Learning Enhanced LLMAgents(RLEA), a multi-agent framework designed to automate the modeling of complex VRPs. RLEA introduces a lightweight neural Planner trained with Soft Q-learning to efficiently orchestrate the actions of LLM-based agents. In addition, we equip the system with an evolutionary memory module and retrieval-augmented generation, enabling the agent to leverage both accumulated experience and external solver knowledge during program generation and refinement for solving VRPs. We evaluated 48 distinct VRP variants across various solvers. The experimental results demonstrate that RLEA outperforms the previous state-of-the-ar method, achieving a 16.67% higher success rate while significantly reducing runtime errors. These results validate that integrating reinforcement learning with LLM-based reasoning is highly effective for automated optimization modeling. The appendix is available at: https://doi.org/10.5281/zenodo.19134435.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "agent",
-        "reasoning"
-      ],
-      "relevance_score": 23.5,
-      "evidence_score": 10.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 33.5,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 Agent：llm agent, multi-agent",
-        "匹配 推理：reasoning"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.04034",
       "version": 1,
       "title": "Editable Visual Design",
@@ -7878,51 +7582,6 @@
         "匹配 MLLM / VLM：multimodal large language model"
       ],
       "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00875",
-      "version": 1,
-      "title": "FractalNet-Based Heterogeneous Federated Learning for Orbital Edge Intelligence in Satellite Mega-Constellations: A Wildfire Case Study",
-      "authors": [
-        "Sai Puppala",
-        "Koushik Sinha"
-      ],
-      "published_at": "2026-09-01T08:07:39+00:00",
-      "updated_at": "2026-09-01T08:07:39+00:00",
-      "categories": [
-        "cs.AI",
-        "cs.DC",
-        "cs.ET",
-        "cs.LG"
-      ],
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.00875v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00875v1",
-      "abstract_en": "Satellite mega-constellations are emerging as large-scale sensing, communication, and computation fabrics, yet their learning architectures remain largely inherited from terrestrial federated learning and ground-centric mission operations--- ill-suited to satellites that differ by orders of magnitude in Size, Weight, Power, and Cost (SWAP-C), radiation tolerance, link availability, and propagation delay. We propose a heterogeneous federated learning method based on the FractalNet architecture for orbital edge intelligence. We formalize contact-window-constrained, depth-heterogeneous federated optimization and introduce a distributed path scheduler that assigns model depth as a function of SWAP-C constraints, predicted inter-satellite contacts, and training statistics. To reduce message overhead and energy consumption, each tier pools updates periodically rather than at every contact opportunity, and a three-tier agentic control plane governs in-space scheduling, anomaly escalation, and policy-governed autonomy. As a case study, we apply the framework to wildfire detection, where each orbital shell naturally learns a different semantic level of situational awareness: pixel-scale thermal anomalies at low Earth orbit (LEO), regional fire-front dynamics at medium Earth orbit (MEO), and larger-scale risk propagation at geostationary or high Earth orbit (GEO/HEO). Experiments on simulated mega-constellations validate the approach across convergence, communication efficiency, energy adaptation, scheduled-pooling savings, robustness, and latency.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "agent"
-      ],
-      "relevance_score": 14.0,
-      "evidence_score": 18.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 32.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 Agent：agentic"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose",
-        "规模化信号：large-scale"
-      ],
       "limitations": [
         "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
       ],
@@ -9147,59 +8806,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2609.00833",
-      "version": 1,
-      "title": "Dense Process Supervision for Search Agents via Fact Utility Estimation",
-      "authors": [
-        "Rongzhi Zhu",
-        "Xiangyu Liu",
-        "Yi Liu",
-        "Shuo Zhang",
-        "Ruirui Zhang",
-        "Rui Wu",
-        "Tao Jiang",
-        "Zequn Sun",
-        "Wenhao Xu",
-        "Wei Hu"
-      ],
-      "published_at": "2026-09-01T07:34:33+00:00",
-      "updated_at": "2026-09-01T07:34:33+00:00",
-      "categories": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CL",
-      "url": "https://arxiv.org/abs/2609.00833v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00833v1",
-      "abstract_en": "Reinforcement learning (RL) for search agents typically relies on outcome rewards. However, it often fails to achieve effective credit assignment, due to the unclear value of intermediate steps. It is hard to separate their contributions from the final result. In this paper, we propose a dense process supervision method based on fact utility estimation, which models the reasoning process as the accumulation of discrete evidence facts. We first extract structured facts from raw observations and organize them into an explicit fact store. To support credit assignment, we then cluster semantically equivalent facts and infer the posterior utility of each fact cluster using Bayesian estimation over group rollouts. Finally, we convert the estimated fact utilities into dense step-level rewards to guide RL training. Experiments on seven single-hop and multi-hop QA benchmarks show that our method consistently outperforms existing baselines. Ablation studies validate clear relative improvements on multi-hop QA compared to outcome reward-only training.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "reasoning",
-        "evaluation"
-      ],
-      "relevance_score": 9.0,
-      "evidence_score": 22.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 31.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "medium",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 推理：reasoning",
-        "匹配 评测：benchmark"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose",
-        "实验或理论证据信号：ablation"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.03985",
       "version": 1,
       "title": "IchthyoNoma: Nomenclature and Context Sensitivity of Zero-Shot Biological Vision--Language Models for Bangladeshi Freshwater Fish Recognition",
@@ -9933,53 +9539,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2609.00834",
-      "version": 1,
-      "title": "Replacing Training with Memory: Listwise Selection for Text-to-SQL",
-      "authors": [
-        "Yeonseok Jeong",
-        "Soyoung Yoon",
-        "Seongjun Lee",
-        "Seung-won Hwang"
-      ],
-      "published_at": "2026-09-01T07:35:00+00:00",
-      "updated_at": "2026-09-01T07:35:00+00:00",
-      "categories": [
-        "cs.SE",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "primary_category": "cs.SE",
-      "url": "https://arxiv.org/abs/2609.00834v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00834v1",
-      "abstract_en": "Modern Text-to-SQL systems often follow generate-execute-select pipelines, generating multiple candidate queries then selecting the best one. Listwise selection, by jointly comparing multiple candidates, has been widely adopted, but fine-tuning listwise selectors is costly. We thus propose a fine-tuning-free listwise selector. We replace two major fine-tuning objectives with inference-time strategies: (1) learning selection criteria as ordering and (2) mitigating positional bias. First, we build reusable structured memories instead of learning selection behavior as model parameters. Given a question, MaP-SQL retrieves memories distilled from training data that encode how natural language maps to schema elements, SQL operations, and expected outputs. These memories serve as explicit decision criteria for evaluating candidates in a listwise manner. Second, to mitigate ordering bias of listwise selectors, we aggregate rankings across multiple input permutations, with inference cost optimized by execution results and pointwise scoring. Our approach improves selection accuracy while maintaining efficiency and compatibility with existing large language models. Across Text-to-SQL benchmarks, it produces more stable selection without fine-tuning and fewer unnecessary comparisons than existing methods. On BIRD-dev, it outperforms the previous state-of-the-art selector-based method R^3-SQL by 2.02 execution accuracy points on average using the same candidate sets, with 2.92x fewer tokens.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "llm",
-        "evaluation"
-      ],
-      "relevance_score": 18.0,
-      "evidence_score": 12.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 30.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 LLM：large language model, language model",
-        "匹配 评测：benchmark, evaluating"
-      ],
-      "evidence": [
-        "实验或理论证据信号：state-of-the-art"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.02122",
       "version": 1,
       "title": "AI agents reshape consensus formation in human groups",
@@ -10289,54 +9848,6 @@
       "tier": "watch",
       "why_it_matters": [
         "匹配 预训练 / 后训练：pretraining",
-        "匹配 评测：evaluation"
-      ],
-      "evidence": [
-        "实验或理论证据信号：ablation"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00846",
-      "version": 1,
-      "title": "An Intelligent Decision Support System for Emotion Monitoring using Microscopic Fixational Dynamics",
-      "authors": [
-        "Xiangyu Shen",
-        "Feiyang Deng",
-        "Zijian Dai",
-        "Aibin Chen",
-        "Jizheng Yi",
-        "Jie Li",
-        "Hongbo Jiang"
-      ],
-      "published_at": "2026-09-01T07:43:42+00:00",
-      "updated_at": "2026-09-01T07:43:42+00:00",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "url": "https://arxiv.org/abs/2609.00846v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00846v1",
-      "abstract_en": "The rising prevalence of psychological disorders necessitates effective emotion monitoring, yet current methods relying on facial or physiological signals often suffer from intrusiveness and privacy issues. This paper proposes an intelligent decision support system and pervasive edge-computing framework that leverages smart glasses and a companion smartphone to infer emotional states from microscopic visual fixation patterns. Moving beyond traditional macroscopic gaze metrics, the proposed system extracts and decomposes three distinct neurophysiological micro-movements: microsaccades, ocular drifts, and ocular microtremors. We introduce an interpretable hybrid artificial intelligence pipeline combining a multi-head attention mechanism, extreme gradient boosting, and a support vector machine to extract deep temporal features, quantify their physiological importance, and perform efficient on-device classification. Through an extensive evaluation involving 60 volunteers, we rigorously validate the framework under a strict leave-one-subject-out cross-validation protocol across both controlled and naturalistic mobile scenarios. Ablation studies unequivocally demonstrate that these fixational micro-movements are substantially more discriminative for emotion inference than traditional macroscopic features. Furthermore, aligned with contemporary affective science, the system incorporates a few-shot personalization mechanism to bridge universal physiological baselines with individual emotional heterogeneity, achieving a highly robust personalized F1-score of 83.6%. This work establishes a physiologically interpretable, unobtrusive, and deployable paradigm for continuous real-time emotion monitoring.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "architecture",
-        "evaluation"
-      ],
-      "relevance_score": 17.0,
-      "evidence_score": 12.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 29.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 模型架构：attention mechanism",
         "匹配 评测：evaluation"
       ],
       "evidence": [
@@ -11483,54 +10994,6 @@
       "tier": "watch",
       "why_it_matters": [
         "匹配 LLM：language model, transformer",
-        "匹配 评测：benchmark"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00823",
-      "version": 1,
-      "title": "Polished but Unresolved: Identifying Late-Stage Pressure States in Long-Horizon Tool-Use Agents",
-      "authors": [
-        "Haoyang Chen",
-        "Yi Liu",
-        "Jianzhi Shao",
-        "Xiaozhou Xu",
-        "Zhe Sun",
-        "Wei Hu"
-      ],
-      "published_at": "2026-09-01T07:24:53+00:00",
-      "updated_at": "2026-09-01T07:24:53+00:00",
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.00823v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00823v1",
-      "abstract_en": "Long-horizon tool-use agents need not only to search and plan, but also to decide when to finalize. We study late-stage pressure states, in which an agent is biased toward submitting a final answer that appears complete and polished while key constraints remain unresolved. We first train a linear probe to show that this pressure state is identifiable from the agent's hidden states. Then, we use activation interventions along this pressure direction and find that shifting the hidden states changes both the pressure score and whether the agent continues tool use or submits early. Through controlled context manipulations, we further see that the pressure is mitigated by constraint clarity and action mapping. Based on these findings, we propose Probe-Sensed Pressure Relief (PSPR), a plugin that applies lightweight pressure relief direction under moderate pressure and moves to structured organization under high pressure risk. Experiments on multiple long-horizon benchmarks show that our method consistently strengthens existing agent methods.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "agent",
-        "evaluation"
-      ],
-      "relevance_score": 16.5,
-      "evidence_score": 10.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 26.5,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 Agent：tool use, tool-use",
         "匹配 评测：benchmark"
       ],
       "evidence": [
@@ -13283,52 +12746,6 @@
       "why_it_matters": [
         "匹配 LLM：large language model, language model",
         "匹配 推理：reasoning, chain-of-thought"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00879",
-      "version": 1,
-      "title": "Towards reliable multimodal disaster severity assessment through preference optimization and explainable vision-language reasoning",
-      "authors": [
-        "Yuanjun Zhang",
-        "Fuzel Ahamed Shaik",
-        "Suvojit Acharjee",
-        "Fahad Khalid",
-        "Mourad Oussalah"
-      ],
-      "published_at": "2026-09-01T08:11:09+00:00",
-      "updated_at": "2026-09-01T08:11:09+00:00",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.00879v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00879v1",
-      "abstract_en": "Reliable disaster damage assessment requires models that provide both accurate predictions and transparent explanations. However, existing multimodal approaches are limited by scarce annotated data and insufficient evaluation of reasoning quality. This study proposes a two-stage training framework that integrates Supervised Fine-Tuning (SFT) and Direct Preference Optimization (DPO) within a unified data construction pipeline. From a single Human-in-the-Loop (HITL) annotation workflow, two complementary datasets are derived, namely ReasoningSet, which contains validated rationales for SFT, and PreferenceSet, which comprises paired rationales for DPO-based alignment. The framework evaluates both classification performance and explanation quality using automatic metrics, model-based scoring, and human ranking. Experimental results show that SFT improves accuracy from 73.64% to 78.29% and increases Macro-F1 by 29% compared to the baseline, while explanation quality improves by approximately 25%. Subsequent DPO alignment further enhances interpretability on the PreferenceSet. Cross-model validation on InternVL-3-8B and LLaVA-1.5-7B demonstrates the robustness and generalizability of the approach. The proposed framework improves detection of underrepresented mild damage cases, reduces high-risk misclassifications, and strengthens alignment between model reasoning and human judgment. Overall, it provides a reproducible pathway to develop reliable multimodal systems that deliver auditable, actionable disaster insights for emergency management.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "training",
-        "reasoning",
-        "evaluation"
-      ],
-      "relevance_score": 25.0,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 25.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 预训练 / 后训练：preference optimization",
-        "匹配 推理：reasoning",
-        "匹配 评测：evaluation"
       ],
       "evidence": [],
       "limitations": [
@@ -18744,55 +18161,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2609.00829",
-      "version": 1,
-      "title": "HarnessEvolve: Learning from Reference Trajectories for Reliable Agent Self-Evolution",
-      "authors": [
-        "Wen Jiang",
-        "Mingmin Chu",
-        "Yimeng Tian",
-        "Qianxin Zhang",
-        "Haofei Yang",
-        "Rui Yang",
-        "Yang Liu",
-        "Tao Lv",
-        "Fangming Li"
-      ],
-      "published_at": "2026-09-01T07:31:18+00:00",
-      "updated_at": "2026-09-01T07:31:18+00:00",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "primary_category": "cs.LG",
-      "url": "https://arxiv.org/abs/2609.00829v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00829v1",
-      "abstract_en": "Self-evolving agents advance toward autonomy by optimizing their harness---prompts, skills, tools, and execution logic---based on environmental feedback. This paradigm, however, is hampered by three challenges: \\textit{credit assignment failure}, where terminal success/failure feedback makes it ambiguous which step caused the error; \\textit{shortcut learning}, where agents memorize task-specific patterns rather than acquire generalizable capabilities; and \\textit{catastrophic forgetting}, where unguarded updates degrade previously acquired competence. In this paper, we introduce HarnessEvolve, a self-evolving framework that learns from reference trajectories to achieve reliable agent self-evolution. HarnessEvolve decouples the execution agent from the evolutionary pipeline, assigning execution, evaluation, optimization, and gating to independent agent modules, enabling generalizable and stable harness improvements. Specifically, HarnessEvolve overcomes credit assignment failure by generating reference trajectories (execution paths produced when given the ground-truth answers) and aligning failed executions against them to extract error signals, which are clustered to reveal systematic failure patterns. To prevent shortcut learning and catastrophic forgetting, candidate harness updates must pass two gates: a quality gate that filters data leakage and prompt bloat, and a performance gate that accepts each update if it improves on the current batch without degrading recent batches, with epoch-end validation on a held-out set selecting the best-performing accepted agent snapshot. We conduct extensive experiments on several benchmarks spanning open-domain and enterprise scenarios, using different models and agent frameworks. Results demonstrate that HarnessEvolve consistently outperforms state-of-the-art baselines across all benchmarks and settings, confirming reliability across task domains.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 2.5,
-      "evidence_score": 14.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 16.5,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：benchmark, evaluation"
-      ],
-      "evidence": [
-        "实验或理论证据信号：state-of-the-art, extensive experiment"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.04148",
       "version": 1,
       "title": "Terminal-Universe: Turning Agent Trajectories into Scalable Terminal Environments",
@@ -23056,44 +22424,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2609.00874",
-      "version": 1,
-      "title": "Beyond the Clock: Measuring the Value of Adaptive Revision",
-      "authors": [
-        "Ayushi Chadha"
-      ],
-      "published_at": "2026-09-01T08:07:38+00:00",
-      "updated_at": "2026-09-01T08:07:38+00:00",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.00874v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00874v1",
-      "abstract_en": "As agentic systems become compound systems, increasingly important decisions move above task execution itself: when should a higher-level controller preserve the strategy guiding another process, and when should it revise it? We study this meta-level control problem in a hierarchical latent reasoner whose manager can retain or replace a commitment governing lower-level computation. Across three precommitted training seeds, learned revision timing produces qualitatively different policies, ranging from an almost deterministic early clock to substantially more state conditioned schedule distributions, yet none outperforms the best forced timing policy evaluated on the same frozen checkpoint. This separates state dependence from decision value: a controller can vary its actions with internal state without turning that variation into a reproducible task-performance benefit. A deeper intervention study on the original checkpoint shows that timing itself is consequential and order-sensitive, while exhaustive enumeration reveals that a strong fixed schedule captures most of the measurable value available from timing at this decision budget. Counterfactual PERSIST/REPLAN diagnostics further show why score-level evidence can be misleading when predictability is dominated by decision position rather than within-position discrimination. Together, these results argue that learned meta-level control should be evaluated along three separate axes: whether its score depends on state, whether that dependence changes realized behavior, and whether those changes capture outcome value beyond a strong non-adaptive policy.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "agent"
-      ],
-      "relevance_score": 14.0,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 14.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 Agent：agentic"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.03330",
       "version": 1,
       "title": "Less Is Moral: A CHARMing Framework for Moral Foundations Detection in Endorsement Behaviour",
@@ -23946,48 +23276,6 @@
       "url": "https://arxiv.org/abs/2609.00924v1",
       "pdf_url": "https://arxiv.org/pdf/2609.00924v1",
       "abstract_en": "Monocular videos record 3D scenes as sequences of 2D image-plane projections, obscuring depth and spatial relationships. Multi-object trackers localize and associate objects primarily using appearance and geometry observed only in the image plane, inheriting these ambiguities. To address this limitation, we introduce PLANET, an end-to-end multi-object tracker designed to move beyond the image plane. As an enabling step, we lift existing 2D tracking datasets into 3D. We then form world-grounded queries by embedding reconstructed 3D scene geometry into the features and positional encodings used during query formation. An auxiliary 3D location prediction task further encourages the queries to encode object positions during training. A complementary dual-resolution temporal memory preserves this evidence across longer temporal gaps. As a result, PLANET achieves state-of-the-art performance across three diverse benchmarks.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 1.0,
-      "evidence_score": 12.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 13.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：benchmark"
-      ],
-      "evidence": [
-        "实验或理论证据信号：state-of-the-art"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.02944",
-      "version": 1,
-      "title": "Reflect-SQL: A Self-Reflection Based Framework for Text-to-SQL",
-      "authors": [
-        "Anupreksha Jain",
-        "Manish Shrivastava"
-      ],
-      "published_at": "2026-09-01T07:46:27+00:00",
-      "updated_at": "2026-09-01T07:46:27+00:00",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "primary_category": "cs.IR",
-      "url": "https://arxiv.org/abs/2609.02944v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.02944v1",
-      "abstract_en": "Democratizing data access through natural language is a crucial goal for modern enterprises, but the practical adoption of Text-to-SQL is critically hindered by real-world complexities: 1. Obscure and large database schemas, 2. Ineffective retrieval of relevant tables and columns due to structured setting of schemas and vague user query, 3. Generation of syntactically or logically flawed SQL due to a lack of robust validation and correction mechanism. To address these systemic challenges, we introduce Reflect-SQL, a novel framework for Text to SQL, grounded in multi-stage self-reflection approach to develop understanding of obscure schema using a knowledge base, setup a process for effective retrieval and system to generate syntactically/semantically SQL. Instead of a single-pass attempt, our system employs an LLM-as-a-judge driven scoring mechanism within interconnected feedback loops to iteratively refine the results at every stage. A feedback-driven retrieval loop refines the user's natural language query, while a synthesis loop validates and corrects the SQL and finally, an entailment loop optimizes the end-to-end process and continuously enriches the knowledge base. By integrating these layers of reflection, Reflect-SQL bridges the critical gap between user intent and complex data. On the challenging BIRD benchmark, our framework achieves an execution accuracy of 72.03%, significantly outperforming state-of-the-art baselines, demonstrating a major leap in reliability for enterprise applications.",
       "abstract_zh": null,
       "tldr_zh": null,
       "topics": [
@@ -25637,49 +24925,6 @@
       "tier": "watch",
       "why_it_matters": [
         "匹配 评测：evaluation"
-      ],
-      "evidence": [
-        "明确的方法贡献：we propose"
-      ],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00818",
-      "version": 1,
-      "title": "AnalysisBank: An Expert Analysis Pattern Library for Financial Report Generation",
-      "authors": [
-        "Yajing Yang",
-        "Yunshan Ma",
-        "Kelvin J. L. Koa",
-        "Min-Yen Kan"
-      ],
-      "published_at": "2026-09-01T07:18:06+00:00",
-      "updated_at": "2026-09-01T07:18:06+00:00",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.00818v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00818v1",
-      "abstract_en": "We argue that financial report generation should operate at the analytical rather than structural level, composing content from data-derived insights rather than high-level topics or sections. To this end, we propose AnalysisBank, which distills expert reports into a reusable library of Analyses, each pairing a data signal, an analytical move, and the expert span it was derived from. At inference time, AnalysisBank matches input signals to library entries and applies the retrieved moves to compose the report. A study of Analyses distilled from 550 expert reports reveals a heavy-tailed distribution of 47-52 signal types spanning 13 move types. On two financial benchmarks across four LLM backbones, AnalysisBank increases the proportion of novel, data-grounded insights by 1.7-3.7x over structural-level baselines. Transfer to scientific writing suggests that the distinction generalizes beyond finance. Code and the distilled Analysis library are available at https://github.com/yajingyang/AnalysisBank.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 1.0,
-      "evidence_score": 10.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 11.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：benchmark"
       ],
       "evidence": [
         "明确的方法贡献：we propose"
@@ -27687,47 +26932,6 @@
       "code_url": null
     },
     {
-      "arxiv_id": "2609.00863",
-      "version": 1,
-      "title": "Conditional Flow Matching for ML-Based Inverse Design Problems",
-      "authors": [
-        "Juliana Felder",
-        "Milad Habibi",
-        "Soheyl Massoudi",
-        "Mark Fuge"
-      ],
-      "published_at": "2026-09-01T08:00:33+00:00",
-      "updated_at": "2026-09-01T08:00:33+00:00",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "url": "https://arxiv.org/abs/2609.00863v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00863v1",
-      "abstract_en": "Engineering inverse design is often limited by the high computational cost of iterative solvers for optimization problems constrained by partial differential equations (PDEs) and by their sensitivity to initialization. Deep generative models can produce candidate designs without rerunning the simulator at inference time. Generative adversarial networks (GANs) sample in one forward pass, whereas diffusion models require iterative reverse-time integration. In this work, we add conditional flow matching (CFM) to EngiOpt and compare it with a conditional diffusion model and a conditional generative adversarial network (cGAN) on structural (beams2d) and thermal (heatconduction2d) benchmarks from EngiBench using the same downstream optimization protocol. We use cumulative optimality gap (COG) and final optimality gap (FOG) as the primary metrics for evaluating the generated designs as warm starts for gradient-based refinement. On the evaluated EngiOpt implementations and two EngiBench tasks, CFM achieves the lowest measured COG, FOG, maximum mean discrepancy (MMD), and volume-fraction deviation on both tasks. CFM has mean volume-fraction deviations of 0.4% and 1.0% on beams2d and heatconduction2d, respectively, compared with 3.8% and 11.2% for diffusion. At Euler s = 16, CFM achieves 53.2 samples/s on beams2d, about 66 times the measured throughput of the evaluated diffusion baseline using 1000 network evaluations under the same timing protocol, with COG 1.182 +/- 3.126, compared with 1.173 +/- 3.100 for Euler s = 32. Across the two tasks, CFM produces warm starts with lower measured COG than both baselines and uses fewer network evaluations than diffusion.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 4.0,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 4.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：benchmark, evaluation, evaluating"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
       "arxiv_id": "2609.01271",
       "version": 1,
       "title": "What Does an Agentic Software Engineering Benchmark Measure? Profiling Task Demands and Agent Behaviour Beyond What Category Labels Reveal",
@@ -28721,46 +27925,6 @@
       "url": "https://arxiv.org/abs/2609.01032v1",
       "pdf_url": "https://arxiv.org/pdf/2609.01032v1",
       "abstract_en": "Automated mining of formal specifications is vital for verifying real-time systems. However, existing passive learning approaches remain restricted to deterministic specifications or limited fragments of Timed Regular Expressions (TRE). To our knowledge, this paper presents the first framework to tackle \\emph{precise} passive learning for an expressive timed logic, \\emph{Metric Interval Temporal Logic} (MITL) without relying on predefined templates or restricted logic fragments. Our approach formally reduces the timed learning problem into a scalable untimed one. By identifying quantitative timing differences between positive and negative traces, we synthesise precise timed constraints and inject them as new Boolean atomic propositions. This embeds timing into the alphabet, delegating the complex formula evaluation to highly optimised, off-the-shelf untimed LTL tools. Crucially, our framework is complete, guaranteeing a separating specification can always be found. We evaluate our implementation across several benchmarks, demonstrating the effectiveness of our approach.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 2.5,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 2.5,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：benchmark, evaluation"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00844",
-      "version": 1,
-      "title": "Staged Linguistic Seeding: Grounded Query Expansion for Verified-Unit QA in AI Contact Centers",
-      "authors": [
-        "Hyeonseop Yoon",
-        "Jeong-Eun Park"
-      ],
-      "published_at": "2026-09-01T07:42:39+00:00",
-      "updated_at": "2026-09-01T07:42:39+00:00",
-      "categories": [
-        "cs.CL",
-        "cs.IR"
-      ],
-      "primary_category": "cs.CL",
-      "url": "https://arxiv.org/abs/2609.00844v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00844v1",
-      "abstract_en": "Customer-service QA in an AI contact center (AICC) runs under deployment constraints that benchmark QA misses: tight voice-hotline latency and a high cost for unsupported or wrong automatic answers. We deploy a system that answers only from a closed set of verified QA units: it returns a retrieved unit verbatim, or routes to clarify, abstain, or handoff. The index is enriched offline by staged linguistic seeding (SLS): a human authors a per-unit world-grounded slot recipe, gpt-4.1-mini renders it into variants, and a light human gate filters them. One methodology is reused across both domains, so inference stays a single retrieval pass with no query-time generation. On held-out query variants from two industrial domains, SLS lifts hybrid R@1 to 0.881/0.930 (+0.27/+0.34), with gains across all five retrievers tested. At the same gpt-4.1-mini generation budget, SLS beats doc2query by +0.20/+0.32, while cross-provenance evaluation provides additional evidence of transfer across generated-query distributions. Verified-unit answering also removes free-form generation's unsupported-content surface (7-13% versus approximately 0%). We report this as an application study, including negative results.",
       "abstract_zh": null,
       "tldr_zh": null,
       "topics": [
@@ -31403,224 +30567,6 @@
       "tier": "watch",
       "why_it_matters": [
         "匹配 评测：evaluation"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00865",
-      "version": 1,
-      "title": "MemoryWalker: Stop Training Agents on Contexts They Never Saw",
-      "authors": [
-        "Zinco J",
-        "Xunjie Zhu",
-        "Shen Huang",
-        "Zhenyi Wang",
-        "Pengjun Xie",
-        "Jieping Ye"
-      ],
-      "published_at": "2026-09-01T08:01:27+00:00",
-      "updated_at": "2026-09-01T08:01:27+00:00",
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "primary_category": "cs.LG",
-      "url": "https://arxiv.org/abs/2609.00865v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00865v1",
-      "abstract_en": "Production agent harnesses such as Claude Code and Qwen-Agent compress context during rollout, but training under compression creates a conditioning problem: every eviction branches the effective history, so the learning object is a tree rather than a sequence. Existing linearizations either retain the rightmost path, causing time-travel leakage, or replay a depth-first traversal, causing train-inference mismatch. We introduce two exact, gradient-equivalent corrections: LogitTree, a segmented K-forward traversal, and a packed 4D attention mask. LogitTree requires K+1 backward passes; the 4D mask requires a custom kernel and white-box eviction records. We also propose SDCC (Self-Distillation for Conditioning Consistency), a single-backward-pass variational relaxation. At each eviction, it minimizes forward KL between the compressed student and a stop-gradient teacher on the reconstructed pre-eviction prefix. A residual per-junction KL of epsilon_KL gives an O(sqrt(epsilon_KL)) bound on the train-deployment total-variation gap. SDCC also applies to black-box harnesses. On seven web-search benchmarks with TC-RAG, AgentFold, MemexRL, Claude Code, and OpenCode, naive training inflates the train-rollout log-probability gap, especially on eviction-heavy batches. The exact methods stay at the no-compression floor, and SDCC substantially closes the gap, with lower logit drift and higher rollout rewards.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 1.0,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 1.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：benchmark"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00858",
-      "version": 1,
-      "title": "Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources",
-      "authors": [
-        "Ivan Decostanzi",
-        "Michele Ronco",
-        "Sergio Consoli",
-        "Christina Corbane",
-        "Lorenzo Bertolini",
-        "Indaco Biazzo",
-        "Daria Mihaila",
-        "Manuel Garcia-Herranz",
-        "Felix Schwebel",
-        "Yelena Mejova",
-        "Kyriaki Kalimeri"
-      ],
-      "published_at": "2026-09-01T07:56:12+00:00",
-      "updated_at": "2026-09-01T07:56:12+00:00",
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.00858v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00858v1",
-      "abstract_en": "Effective humanitarian response depends on the rapid synthesis of heterogeneous, high-volume information sources - a task that routinely exceeds human analytical capacity in the critical early hours of a crisis. We present a pipeline that combines structured disaster records from EM-DAT with unstructured documents from ReliefWeb and the European Media Monitor (EMM) to produce source-grounded disaster storylines and causal knowledge graphs supporting situational awareness for responders and analysts. Using Retrieval-Augmented Generation, the pipeline extracts structured storylines - tabular event profiles covering 17 fields, from severity and key drivers to child-sensitive impact indicators - and constructs causal knowledge graphs where each node and edge is enriched with citation-grounded explanatory narratives, enabling full traceability back to primary sources. We evaluate the system on three diverse crisis use cases through a human evaluation involving 9 domain expert and 9 non-expert evaluators. Results confirm high retrieval precision, strong faithfulness of extracted causal relations, and a clear expert preference for citation-grounded components over ungrounded alternatives. The pipeline is designed to scale to the full EM-DAT catalogue, with the goal of publicly releasing a narrative-enriched version of the database.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 1.0,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 1.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：evaluation"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00854",
-      "version": 1,
-      "title": "Does Fault Localization Beat a Fresh Attempt? A Placebo-Controlled Study of Test-Guided Code Repair",
-      "authors": [
-        "Anik Jha"
-      ],
-      "published_at": "2026-09-01T07:48:51+00:00",
-      "updated_at": "2026-09-01T07:48:51+00:00",
-      "categories": [
-        "cs.SE",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "primary_category": "cs.SE",
-      "url": "https://arxiv.org/abs/2609.00854v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00854v1",
-      "abstract_en": "Fault localization can focus a code model's repair on the statements a failing test implicates, but a targeted edit may succeed merely because it is small, and a second model call may succeed without using the failure at all. We separate these explanations with three arms applied to the same failed candidate: blind whole-solution resampling, spectrum-based localization followed by suspect-span infilling, and same-length infilling at a disjoint random code span. Across three frozen 26-32B models, three benchmarks and 488 failing candidates, plus a separately declared 24B fourth model from a third family, three results follow. First, localization is rarely available: only 9.0% of failing candidates expose a failing public test with a usable spectrum. Second, among the 177 candidates localizable from a strong suite, localized infilling loses decisively to blind resampling at a matched attempt count (3:40, p = 3.0 x 10^-9), opposite to our hypothesis; the loss replicates in a third family at -11.3 points (95% CI [-16.6, -6.8]), and widening the edit does not rescue it. Third, against the random-span placebo localized infilling leads pooled (11:1, Holm-adjusted p = .019), but that lead resolves in no individual model under the analysis our shipped plan designates primary (best Holm p = .087), so we report the location effect as suggestive rather than established. Re-pricing attempts as tokens narrows but does not overturn this: a span attempt spends 21.7 generated tokens against 371.1, yet 16 localized attempts reach 6.8% while one blind attempt already reaches 10.1%. Infilling reproduces the removed span verbatim in 48.9% of attempts, which is why more budget does not help. We restrict every localization conclusion to the 24-32B models tested.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 1.0,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 1.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：benchmark"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00831",
-      "version": 1,
-      "title": "FLaG: Frequency-Domain Latent-attention Gated Pooling for Token Aggregation",
-      "authors": [
-        "Kewei Li",
-        "Rongying Zhang",
-        "Xueli Wang",
-        "Xiwen Gong",
-        "Zhongjian Wang",
-        "Qiuchen Zhao",
-        "Lan Huang",
-        "Ruochi Zhang",
-        "Fengfeng Zhou"
-      ],
-      "published_at": "2026-09-01T07:32:44+00:00",
-      "updated_at": "2026-09-01T07:32:44+00:00",
-      "categories": [
-        "cs.AI",
-        "q-bio.BM"
-      ],
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.00831v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00831v1",
-      "abstract_en": "Token aggregation converts token-level representations into fixed-dimensional sample representations, but most pooling methods operate only in the original token space. We introduce Frequency-Domain Latent-attention Gated Pooling (FLaG), a plug-in aggregation module that re-expresses encoder outputs in the Fourier domain before final pooling. FLaG represents the nonredundant rFFT spectrum through concatenated real and imaginary components, summarizes spectral tokens with learnable latent queries, derives a sample-conditioned channel gate, and reconstructs modulated token representations for downstream aggregation. We evaluate the same architecture across ESM2-based antimicrobial peptide (AMP) activity prediction, ResNet18 image classification on CIFAR-10 and CIFAR-100, and three RoBERTa-based language tasks. FLaG achieves the best macro-averaged Spearman correlation coefficient, RMSE, and Recall@50 across four AMP backbone-species settings and the highest top-1 accuracy on CIFAR 10. It also achieves the best mean results on five of seven language metrics, although mean pooling remains strongest on STSBenchmark. AMP-side mechanistic analyses reveal low-frequency prediction sensitivity across most encoder layers, with increased relative high-frequency sensitivity in the final layer, and pronounced peptide-specific positional responses. The residual gate broadly amplifies spectral channels while preserving the low-frequency-dominated energy profile, whereas latent cross-attention exhibits sample- and species-specific spectral allocation. Overall, FLaG provides a transferable frequency-domain aggregation bias across protein, visual, and textual representations, with benefits that depend on the backbone and downstream task. Supplementary materials, source code, and data are available at https://www.healthinformaticslab.org/supp/ and https://github.com/Kewei2023/AMPCliff/tree/FLaG.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 1.0,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 1.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：benchmark"
-      ],
-      "evidence": [],
-      "limitations": [
-        "当前仅检查标题和摘要，尚未核验正文、实验细节与可复现性。"
-      ],
-      "code_url": null
-    },
-    {
-      "arxiv_id": "2609.00816",
-      "version": 1,
-      "title": "Can Scene Text Recognition Read Rare Compositions?",
-      "authors": [
-        "Genpei Zhang"
-      ],
-      "published_at": "2026-09-01T07:16:42+00:00",
-      "updated_at": "2026-09-01T07:16:42+00:00",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "url": "https://arxiv.org/abs/2609.00816v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.00816v1",
-      "abstract_en": "Scene text recognition is reported as 89--97% accurate on the six standard benchmarks, and the problem is widely treated as saturated. We present an alternative reading. When the same test images are stratified jointly by ground-truth word rarity and character n-gram novelty against a reference corpus, accuracy at the rare-word x rare-trigram corner of the resulting 5x5 grid drops 10--18 pt below the q3/q3 centre across nine English specialised recognisers, and the same direction (corner below centre) holds on all 13 of 13 (language, model) pairs we test across four writing systems (Latin, Han, Han+kana, Arabic). The drop is not a capacity bottleneck. A 6x vision-backbone scale-up (CLIP4STR-Base 158M -> CLIP4STR-Huge 1.0B, OpenCLIP ViT-H/14 LAION-2B) leads every benchmark in aggregate accuracy yet leaves the stress corner unchanged (86.9 -> 86.5, within paired-bootstrap noise). Four converging probes--layer-wise probing, confidence-when-wrong, attention re-balancing, and a cross-script commit-vs-abstain error split--localise the failure to the autoregressive decoder's lexical prior. We then ask how much of the gap existing techniques recover. Of 16 non-architectural mitigations, the largest mean q5/q5 gain is +1.3 pt and none clears the paired-bootstrap noise floor; the only intervention that does is the architectural shift from autoregressive to CTC decoding (SVTRv2, +2.5 pt, p=0.02, n=474). A confidence-routed AR-CTC ensemble adds a directionally consistent +0.6 pt that stays within noise, and its dominant learned coefficient is each model's own minimum-softmax confidence--independently echoing the mechanism above. No configuration we test improves both the compositional corner and aggregate accuracy. The rare-input long tail thus points to architectural change rather than added capacity.",
-      "abstract_zh": null,
-      "tldr_zh": null,
-      "topics": [
-        "evaluation"
-      ],
-      "relevance_score": 1.0,
-      "evidence_score": 0.0,
-      "preference_boost": 0.0,
-      "preference_penalty": 0.0,
-      "overall_score": 1.0,
-      "evidence_grade": "摘要初审",
-      "confidence": "low",
-      "tier": "watch",
-      "why_it_matters": [
-        "匹配 评测：benchmark"
       ],
       "evidence": [],
       "limitations": [
